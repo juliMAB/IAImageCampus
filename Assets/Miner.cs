@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class Miner : MonoBehaviour
@@ -39,8 +40,14 @@ public class Miner : MonoBehaviour
 
     private FSM fsm;
     // Start is called before the first frame update
+    public Vector3 V3Anterior;
+    private Vector3 V3Calculado;
+    public Vector3 V3Deposito;
+    public Vector3 V3Mina;
     void Start()
     {
+        V3Mina = mine.transform.position;
+        V3Deposito = deposit.transform.position;
         fsm = new FSM((int)States._Count, (int)Flags._Count);
         fsm.ForceCurretState((int)States.GoToMine);
 
@@ -68,29 +75,23 @@ public class Miner : MonoBehaviour
 
         fsm.AddBehaviour((int)States.GoToMine, () =>
         {
-
-            Vector2 dir = (mine.transform.position - transform.position).normalized;
-
-            if (Vector2.Distance(mine.transform.position, transform.position) > 1.0f)
+            if (V3Anterior != V3Calculado)
             {
-                Vector2 movement = dir * 10.0f * Time.deltaTime;
-                transform.position += new Vector3(movement.x, movement.y);
+                transform.position = V3Calculado;
             }
             else
             {
                 fsm.SetFlag((int)Flags.OnReachMine);
             }
+            V3Anterior = transform.position;
         });
         fsm.AddBehaviour((int)States.GoToMine, () => { Debug.Log("GoToMine"); });
 
         fsm.AddBehaviour((int)States.GoToDeposit, () =>
         {
-            Vector2 dir = (deposit.transform.position - transform.position).normalized;
-
-            if (Vector2.Distance(deposit.transform.position, transform.position) > 1.0f)
+            if (V3Anterior != V3Calculado)
             {
-                Vector2 movement = dir * 10.0f * Time.deltaTime;
-                transform.position += new Vector3(movement.x, movement.y);
+                transform.position = V3Calculado;
             }
             else
             {
@@ -99,14 +100,42 @@ public class Miner : MonoBehaviour
                 else
                     fsm.SetFlag((int)Flags.OnReachDeposit);
             }
+            V3Anterior = transform.position;
         });
         fsm.AddBehaviour((int)States.GoToDeposit, () => { Debug.Log("GoToDeposit"); });
 
     }
 
     // Update is called once per frame
-    void Update()
+    public void MyUpdate()
     {
         fsm.Update();
+    }
+
+    public void CalcularNuevaPos(Vector3 tPos, Vector3 deposito,Vector3 mina ,float deltaTime)
+    {
+        Vector2 dir;
+        switch (fsm.GetCurrentState())
+        {
+            case (int)States.GoToMine:
+                dir = (mina - tPos).normalized;
+
+                if (Vector2.Distance(mina, tPos) > 1.0f)
+                {
+                    Vector2 movement = dir * 10.0f * deltaTime;
+                    V3Calculado = tPos + new Vector3(movement.x, movement.y);
+                }
+                break;
+            case (int)States.GoToDeposit:
+                dir = (deposito - tPos).normalized;
+
+                if (Vector2.Distance(deposito, tPos) > 1.0f)
+                {
+                    Vector2 movement = dir * 10.0f * deltaTime;
+                    V3Calculado = tPos + new Vector3(movement.x, movement.y);
+                }
+                break;
+        }
+        
     }
 }

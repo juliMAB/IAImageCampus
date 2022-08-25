@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class Miner : MonoBehaviour
 {
-
-    enum States
+    //lo que esta haciendo.
+    public enum States
     {
         Mining,
         GoToMine,
@@ -17,8 +17,8 @@ public class Miner : MonoBehaviour
 
         _Count
     }
-
-    enum Flags
+    //la condicion que utiliza para cambiar de estado.
+    public enum Flags
     {
         OnFullInventory,
         OnReachMine,
@@ -33,10 +33,11 @@ public class Miner : MonoBehaviour
     public GameObject mine;
     public GameObject deposit;
 
-    private float speed = 10.0f;
+    //private float speed = 10.0f;
     private float miningTime = 5.0f;
     private float currentMiningTime = 0.0f;
     private int mineUses = 10;
+    public float example = 1f;
 
     private FSM fsm;
     // Start is called before the first frame update
@@ -44,11 +45,17 @@ public class Miner : MonoBehaviour
     private Vector3 V3Calculado;
     public Vector3 V3Deposito;
     public Vector3 V3Mina;
-    void Start()
+
+    private void OnValidate()
     {
-        V3Mina = mine.transform.position;
-        V3Deposito = deposit.transform.position;
-        fsm = new FSM((int)States._Count, (int)Flags._Count);
+        //if (fsm==null)
+        //{
+        //    InitFsm();
+        //}
+    }
+    void InitFsm()
+    {
+        //fsm = new FSM((int)States._Count, (int)Flags._Count);
         fsm.ForceCurretState((int)States.GoToMine);
 
         fsm.SetRelation((int)States.GoToMine, (int)Flags.OnReachMine, (int)States.Mining);
@@ -56,53 +63,113 @@ public class Miner : MonoBehaviour
         fsm.SetRelation((int)States.GoToDeposit, (int)Flags.OnReachDeposit, (int)States.GoToMine);
         fsm.SetRelation((int)States.GoToDeposit, (int)Flags.OnEmpyMine, (int)States.Idle);
 
-        fsm.AddBehaviour((int)States.Idle, () => { Debug.Log("Idle"); });
+       // fsm.AddBehaviour((int)States.Idle, () => { Debug.Log("Idle"); });
+       //
+       // fsm.AddBehaviour((int)States.Mining, () =>
+       // {
+       //     if (currentMiningTime < miningTime)
+       //     {
+       //         currentMiningTime += Time.deltaTime;
+       //     }
+       //     else
+       //     {
+       //         currentMiningTime = 0.0f;
+       //         fsm.SetFlag((int)Flags.OnFullInventory);
+       //         mineUses--;
+       //     }
+       // });
+       // fsm.AddBehaviour((int)States.Mining, () => { Debug.Log("Mining"); });
+       //
+       // fsm.AddBehaviour((int)States.GoToMine, () =>
+       // {
+       //     if (V3Anterior != V3Calculado)
+       //     {
+       //         transform.position = V3Calculado;
+       //     }
+       //     else
+       //     {
+       //         fsm.SetFlag((int)Flags.OnReachMine);
+       //     }
+       //     V3Anterior = transform.position;
+       // });
+       // fsm.AddBehaviour((int)States.GoToMine, () => { Debug.Log("GoToMine"); });
+       //
+       // fsm.AddBehaviour((int)States.GoToDeposit, () =>
+       // {
+       //     if (V3Anterior != V3Calculado)
+       //     {
+       //         transform.position = V3Calculado;
+       //     }
+       //     else
+       //     {
+       //         if (mineUses <= 0)
+       //             fsm.SetFlag((int)Flags.OnEmpyMine);
+       //         else
+       //             fsm.SetFlag((int)Flags.OnReachDeposit);
+       //     }
+       //     V3Anterior = transform.position;
+       // });
+       // fsm.AddBehaviour((int)States.GoToDeposit, () => { Debug.Log("GoToDeposit"); });
+    }
+    void Start()
+    {
+        V3Mina = mine.transform.position;
+        V3Deposito = deposit.transform.position;
+        //fsm = new FSM((int)States._Count, (int)Flags._Count);
+        fsm.ForceCurretState((int)States.GoToMine);
 
-        fsm.AddBehaviour((int)States.Mining, () =>
-        {
-            if (currentMiningTime < miningTime)
-            {
-                currentMiningTime += Time.deltaTime;
-            }
-            else
-            {
-                currentMiningTime = 0.0f;
-                fsm.SetFlag((int)Flags.OnFullInventory);
-                mineUses--;
-            }
-        });
-        fsm.AddBehaviour((int)States.Mining, () =>{ Debug.Log("Mining"); });
+        fsm.SetRelation((int)States.GoToMine, (int)Flags.OnReachMine, (int)States.Mining);
+        fsm.SetRelation((int)States.Mining, (int)Flags.OnFullInventory, (int)States.GoToDeposit);
+        fsm.SetRelation((int)States.GoToDeposit, (int)Flags.OnReachDeposit, (int)States.GoToMine);
+        fsm.SetRelation((int)States.GoToDeposit, (int)Flags.OnEmpyMine, (int)States.Idle);
 
-        fsm.AddBehaviour((int)States.GoToMine, () =>
-        {
-            if (V3Anterior != V3Calculado)
-            {
-                transform.position = V3Calculado;
-            }
-            else
-            {
-                fsm.SetFlag((int)Flags.OnReachMine);
-            }
-            V3Anterior = transform.position;
-        });
-        fsm.AddBehaviour((int)States.GoToMine, () => { Debug.Log("GoToMine"); });
-
-        fsm.AddBehaviour((int)States.GoToDeposit, () =>
-        {
-            if (V3Anterior != V3Calculado)
-            {
-                transform.position = V3Calculado;
-            }
-            else
-            {
-                if (mineUses <= 0)
-                    fsm.SetFlag((int)Flags.OnEmpyMine);
-                else
-                    fsm.SetFlag((int)Flags.OnReachDeposit);
-            }
-            V3Anterior = transform.position;
-        });
-        fsm.AddBehaviour((int)States.GoToDeposit, () => { Debug.Log("GoToDeposit"); });
+       // fsm.AddBehaviour((int)States.Idle, () => { Debug.Log("Idle"); });
+       //
+       // fsm.AddBehaviour((int)States.Mining, () =>
+       // {
+       //     if (currentMiningTime < miningTime)
+       //     {
+       //         currentMiningTime += Time.deltaTime;
+       //     }
+       //     else
+       //     {
+       //         currentMiningTime = 0.0f;
+       //         fsm.SetFlag((int)Flags.OnFullInventory);
+       //         mineUses--;
+       //     }
+       // });
+       // fsm.AddBehaviour((int)States.Mining, () =>{ Debug.Log("Mining"); });
+       //
+       // fsm.AddBehaviour((int)States.GoToMine, () =>
+       // {
+       //     if (V3Anterior != V3Calculado)
+       //     {
+       //         transform.position = V3Calculado;
+       //     }
+       //     else
+       //     {
+       //         fsm.SetFlag((int)Flags.OnReachMine);
+       //     }
+       //     V3Anterior = transform.position;
+       // });
+       // fsm.AddBehaviour((int)States.GoToMine, () => { Debug.Log("GoToMine"); });
+       //
+       // fsm.AddBehaviour((int)States.GoToDeposit, () =>
+       // {
+       //     if (V3Anterior != V3Calculado)
+       //     {
+       //         transform.position = V3Calculado;
+       //     }
+       //     else
+       //     {
+       //         if (mineUses <= 0)
+       //             fsm.SetFlag((int)Flags.OnEmpyMine);
+       //         else
+       //             fsm.SetFlag((int)Flags.OnReachDeposit);
+       //     }
+       //     V3Anterior = transform.position;
+       // });
+       // fsm.AddBehaviour((int)States.GoToDeposit, () => { Debug.Log("GoToDeposit"); });
 
     }
 
@@ -137,5 +204,10 @@ public class Miner : MonoBehaviour
                 break;
         }
         
+    }
+
+    public States GetCurrentState()
+    {
+        return (States)fsm.GetCurrentState();
     }
 }

@@ -17,9 +17,7 @@ public class PararelExample : MonoBehaviour
     private void Start()
     {
         for (int i = 0; i < fsmList.Count; i++)
-        {
             mineros.Add(fsmList[i]);
-        }
     }
 
     private void Update()

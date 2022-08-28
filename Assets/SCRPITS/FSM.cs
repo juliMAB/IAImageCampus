@@ -194,12 +194,7 @@ public class FSM : MonoBehaviour, ISerializationCallbackReceiver
         }
     }
 
-    //[ContextMenu("a")]
-    //[SerializeField]  private static States sourceState_static;
-    //[SerializeField]  private static States sourceState2_static;
-    //[SerializeField]  private static Flags  flag_static;
-    //[SerializeField]  private static States destinationState_static;
-    //[SerializeField]  private static UnityEvent Beheaver_static;
+
     [Header("Select_To_Set_Relation_And_Press_Relate")]
     [SerializeField] private States sourceState;
     [SerializeField] private Flags  flag;

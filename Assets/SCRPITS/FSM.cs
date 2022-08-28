@@ -7,8 +7,8 @@ public class FSM : MonoBehaviour, ISerializationCallbackReceiver
 {
     [SerializeField] private int currentState;
     [SerializeField] static private int[,] relations = null;
-    [SerializeField] private List<Package<int>> relationsList;
-    [SerializeField] private List<Package2<string>> relationsListStrign;
+    [SerializeField] static public List<Package<int>> relationsList;
+    [SerializeField] static public List<Package2<string>> relationsListStrign;
     [SerializeField] static private Dictionary<int, List<UnityEvent>> behaviours2;
     [SerializeField] private List<Package3<List<UnityEvent>>> BeahaversRelated;
 
@@ -49,7 +49,7 @@ public class FSM : MonoBehaviour, ISerializationCallbackReceiver
     }
     // A package to store our stuff
     [System.Serializable]
-    struct Package<TElement>
+    public struct Package<TElement>
     {
         public int Index0;
         public int Index1;
@@ -62,7 +62,7 @@ public class FSM : MonoBehaviour, ISerializationCallbackReceiver
         }
     }
     [System.Serializable]
-    struct Package3<TElement>
+    public struct Package3<TElement>
     {
         public States state;
         public TElement Element;
@@ -73,7 +73,7 @@ public class FSM : MonoBehaviour, ISerializationCallbackReceiver
         }
     }
     [System.Serializable]
-    struct Package2<TElement>
+    public struct Package2<TElement>
     {
         public TElement Index0;
         public TElement Index1;

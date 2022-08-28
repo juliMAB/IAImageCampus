@@ -31,7 +31,12 @@ public class NodeGenerator : MonoBehaviour
 
         map[NodeUtils.PositionToIndex(new Vector2Int(1, 0))].state = Node.NodeState.Obstacle;
         map[NodeUtils.PositionToIndex(new Vector2Int(3, 1))].state = Node.NodeState.Obstacle;
-        map[NodeUtils.PositionToIndex(new Vector2Int(1, 1))].SetWeight(10);
+        map[NodeUtils.PositionToIndex(new Vector2Int(1, 1))].SetWeight(2);
+        map[NodeUtils.PositionToIndex(new Vector2Int(1, 2))].SetWeight(2);
+        map[NodeUtils.PositionToIndex(new Vector2Int(1, 3))].SetWeight(2);
+        map[NodeUtils.PositionToIndex(new Vector2Int(1, 4))].SetWeight(2);
+        map[NodeUtils.PositionToIndex(new Vector2Int(1, 5))].SetWeight(2);
+        map[NodeUtils.PositionToIndex(new Vector2Int(1, 6))].SetWeight(2);
     }
     void Start()
     {

@@ -9,15 +9,18 @@ public class PathFinding
     {
         BreadthFirst,
         dephFirst,
-        Dijkstra
+        Dijkstra,
+        AStar
     }
 
-    Methods methods = Methods.Dijkstra;
+    Methods methods = Methods.AStar;
     List<int> openNodesID = new List<int>();
     List<int> closedNodesID = new List<int>();
+    Vector2Int destinationPosition;
     public List<Vector2Int> GetPath(Node[] map, Node origin, Node destination)
     {
         openNodesID.Add(origin.ID);
+        destinationPosition = destination.position;
         Node currentNode = origin;
         while (currentNode.position != destination.position)
         {
@@ -72,15 +75,29 @@ public class PathFinding
             case Methods.dephFirst:
                 return map[openNodesID[openNodesID.Count-1]];
             case Methods.Dijkstra:
-                Node n = null;
-                int currentMaxWeight = int.MaxValue;
-                for (int i = 0; i < openNodesID.Count; i++)
-                    if (map[openNodesID[i]].totalWeight < currentMaxWeight)
-                    {
-                        n = map[openNodesID[i]];
-                        currentMaxWeight = map[openNodesID[i]].totalWeight;
-                    }
-                return n;
+                {
+                    Node n = null;
+                    int currentMaxWeight = int.MaxValue;
+                    for (int i = 0; i < openNodesID.Count; i++)
+                        if (map[openNodesID[i]].totalWeight < currentMaxWeight)
+                        {
+                            n = map[openNodesID[i]];
+                            currentMaxWeight = map[openNodesID[i]].totalWeight;
+                        }
+                    return n;
+                }
+            case Methods.AStar:
+                {
+                    Node n = null;
+                    int currentMaxWeightAndDistance = int.MaxValue;
+                    for (int i = 0; i < openNodesID.Count; i++)
+                        if (map[openNodesID[i]].totalWeight + GetManhattanDistance(map[openNodesID[i]].position, destinationPosition) < currentMaxWeightAndDistance)
+                        {
+                            n = map[openNodesID[i]];
+                            currentMaxWeightAndDistance = map[openNodesID[i]].totalWeight + GetManhattanDistance(map[openNodesID[i]].position,destinationPosition);
+                        }
+                    return n;
+                }
         }
         return null;
         
@@ -92,5 +109,12 @@ public class PathFinding
         //if (currentNode.openerID == -1)
         //    return null;
         //return GetNextNode(map, map[currentNode.openerID]);
+    }
+
+    private int GetManhattanDistance(Vector2Int origin, Vector2Int destination)
+    {
+        int disX = Mathf.Abs(origin.x - destination.x);
+        int disY = Mathf.Abs(origin.y - destination.y);
+        return disX + disY;
     }
 }

@@ -4,16 +4,40 @@ using UnityEngine;
 
 public class Node
 {
+    public enum NodeState
+    {
+        Open,
+        Closed,
+        Ready
+
+    }
+
     public int ID;
     public Vector2Int position;
     public List<int> adjacentNodeIDs;
+    public NodeState state;
+    public int openerID;
 
     public Node(int ID, Vector2Int position)
     {
         this.ID = ID;
         this.position = position;
         this.adjacentNodeIDs = NodeUtils.GetAdjacentsNodesIDs(position);
+        this.state = NodeState.Ready;
+        openerID = -1;
     } 
+
+    public void Open(int openerID)
+    {
+        state = NodeState.Open;
+        this.openerID = openerID;
+    }
+
+    public void Reset()
+    {
+        this.state = NodeState.Ready;
+        this.openerID = -1;
+    }
 }
 public static class NodeUtils
 {

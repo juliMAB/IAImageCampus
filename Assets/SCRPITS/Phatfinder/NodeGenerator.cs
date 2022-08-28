@@ -28,6 +28,10 @@ public class NodeGenerator : MonoBehaviour
                 ID++;
             }
         }
+
+        map[NodeUtils.PositionToIndex(new Vector2Int(1, 0))].state = Node.NodeState.Obstacle;
+        map[NodeUtils.PositionToIndex(new Vector2Int(3, 1))].state = Node.NodeState.Obstacle;
+        map[NodeUtils.PositionToIndex(new Vector2Int(1, 1))].SetWeight(10);
     }
     void Start()
     {
@@ -55,14 +59,18 @@ public class NodeGenerator : MonoBehaviour
                     Gizmos.color = Color.green;
                     break;
                 case Node.NodeState.Closed:
-                    Gizmos.color = Color.red;
+                    Gizmos.color = Color.black;
                     break;
                 case Node.NodeState.Ready:
-                    Gizmos.color = Color.yellow;
+                    Gizmos.color = Color.white;
+                    break;
+                case Node.NodeState.Obstacle:
+                    Gizmos.color = Color.red;
                     break;
                 default:
                     break;
             }
+            
             Vector3 worldPosition = new Vector3(node.position.x, node.position.y, 0.0f);
             Gizmos.DrawWireSphere(worldPosition, 0.2f);
             Handles.Label(worldPosition, node.ID.ToString(), style);

@@ -6,9 +6,10 @@ public class Node
 {
     public enum NodeState
     {
-        Open,
-        Closed,
-        Ready
+        Open,   //Abiertos por otro nodo pero no visitados
+        Closed, //ya visitados
+        Ready,   //no abiertos por nadie
+        Obstacle
 
     }
 
@@ -17,6 +18,9 @@ public class Node
     public List<int> adjacentNodeIDs;
     public NodeState state;
     public int openerID;
+    public int weight = 1;
+    private int originalWigth;
+    public int totalWeight;
 
     public Node(int ID, Vector2Int position)
     {
@@ -27,16 +31,27 @@ public class Node
         openerID = -1;
     } 
 
-    public void Open(int openerID)
+    public void SetWeight(int weight)
+    {
+        this.weight = weight;
+        originalWigth = weight;
+    }
+
+    public void Open(int openerID, int parentWeight)
     {
         state = NodeState.Open;
         this.openerID = openerID;
+        totalWeight = parentWeight + weight;
     }
 
     public void Reset()
     {
-        this.state = NodeState.Ready;
-        this.openerID = -1;
+        if (this.state!=NodeState.Obstacle)
+        {
+            this.state = NodeState.Ready;
+            this.openerID = -1;
+            weight = originalWigth;
+        }
     }
 }
 public static class NodeUtils

@@ -13,16 +13,18 @@ public class VoronoiEditor : Editor
 
         Voronoi2 v = (Voronoi2)target;
 
-        if (GUILayout.Button("1"))
+        if (GUILayout.Button("RandomNodes"))
             v.RandomNodes();
-        if (GUILayout.Button("2"))
+        if (GUILayout.Button("InitSegmentos"))
             v.InitSegmentos();
-        if (GUILayout.Button("3"))
-            v.InitFuncionLineales();
-        if (GUILayout.Button("4"))
+        if (GUILayout.Button("InitBizectrizPerpendicular"))
+            v.InitBizectrizPerpendicular();
+        if (GUILayout.Button("InitPuntosDeCorte"))
             v.InitPuntosDeCorte();
-        if (GUILayout.Button("5"))
-            v.InitCorte();
+        if (GUILayout.Button("InitSegmentosCortados"))
+            v.InitSegmentosCortados();
+        if (GUILayout.Button("InitDeleteSegmentosExtras"))
+            v.InitDeleteSegmentosExtras();
     }
     
 }

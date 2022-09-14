@@ -15,6 +15,19 @@ public class AreasVoronoi : MonoBehaviour
         public Vector3 p1;
         public Vector3 p2;
 
+
+        public static bool operator ==(Segmento lhs, Segmento rhs)
+        {
+            
+            return (lhs.p1 == rhs.p1 && lhs.p2 == rhs.p2) || (lhs.p2 == rhs.p1 && lhs.p1 == rhs.p2);
+        }
+        public static bool operator !=(Segmento lhs, Segmento rhs)
+        {
+            return (lhs.p1 == rhs.p1 && lhs.p2 != rhs.p2) ||
+                   (lhs.p2 == rhs.p1 && lhs.p1 != rhs.p2) || 
+                   (lhs.p1 != rhs.p1 && lhs.p2 == rhs.p2) ||
+                   (lhs.p2 != rhs.p1 && lhs.p1 == rhs.p2);
+        }
         public Segmento(Vector3 a,Vector3 b)
         {
             p1 = a;

@@ -1,20 +1,24 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.ExceptionServices;
-using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.Rendering;
-using UnityEngine.UIElements;
-using static UnityEditor.PlayerSettings;
-
 public class Voronoi2 : MonoBehaviour
 {
     public Coroutine LocalCorrutine = null;
 
     public Rect limits = new Rect();
+
+    [Serializable]
+
+    public enum mode
+    {
+        normal,
+        weight
+    }
+    public mode modeActual;
+
 
     [Serializable]
     public class Point
@@ -64,51 +68,12 @@ public class Voronoi2 : MonoBehaviour
         }
     }
 
-
-
-    [Serializable]
-
-    public class Triangle
-    {
-        public Point p1;
-        public Point p2;
-        public Point p3;
-
-        public Segmento s12;
-        public Segmento s23;
-        public Segmento s31;
-
-
-
-        public Triangle(Point p1, Point p2, Point p3, Segmento s12, Segmento s23, Segmento s31)
-        {
-            this.p1 = p1;
-            this.p2 = p2;
-            this.p3 = p3;
-            this.s12 = s12;
-            this.s23 = s23;
-            this.s31 = s31;
-        }
-        public Triangle(Segmento s12, Segmento s23, Segmento s31)
-        {
-            this.s12 = s12;
-            this.s23 = s23;
-            this.s31 = s31;
-
-            this.p1 = s12.p1;
-            this.p2 = s12.p2;
-            this.p3 = s23.p2;
-        }
-    }
-
     [Serializable]
     public class Segmento
     {
         public bool show;
         public Point p1;
         public Point p2;
-
-        //public Point PuntoContrarioAP1yP2;
 
 
         public Point p1primo;
@@ -149,17 +114,18 @@ public class Voronoi2 : MonoBehaviour
         {
             return Vector3.Lerp(a.pos, b.pos, 0.5f);
         }
+
+        public static Vector3 ObtenerPuntoMedioPorPeso(Point a, Point b)
+        {
+            return Vector3.Lerp(a.pos, b.pos, ((-a.weight + b.weight) / 2) - 0.5f);
+        }
         public Vector3 ObtenerPuntoMedio()
         {
             return Vector3.Lerp(p1.pos, p2.pos, 0.5f);
         }
-        public float ObtenerDistanciaDelPuntoMedioAlPuntoDelSegmentoDeOrigen()
-        {
-            return Vector3.Distance(Segmento.ObtenerPuntoMedio(p1primo, p2primo), ObtenerPuntoMedio());
-        }
         public Vector3 ObtenerPuntoMedioModificadoPorPeso()
         {
-            return Vector3.Lerp(p1.pos, p2.pos, ((-p1.weight + p2.weight) / 2) - 0.5f);
+            return Vector3.Lerp(p1.pos, p2.pos, MathF.Abs( ((-p1.weight + p2.weight) / 2) - 0.5f));
         }
     }
     [Serializable]
@@ -314,15 +280,6 @@ public class Voronoi2 : MonoBehaviour
         }
     }
 
-    [Serializable]
-    public class FuncionLinealLimitada
-    {
-        FuncionLineal funcion;
-        public Point p1;
-        public Point p2;
-
-
-    }
 
     public int NodesCuantity = 0;
 
@@ -330,15 +287,11 @@ public class Voronoi2 : MonoBehaviour
 
     public List<Segmento> segmentos = new List<Segmento>();
 
-    public List<Triangle> List_Triangleos = new List<Triangle>();
-
     public List<FuncionLineal> bizectrizesPerpendiculares = new List<FuncionLineal>();
 
     public List<Segmento> List_SegmentosLimites = new List<Segmento>();
 
     public List<Point> interseccionesMediatrices = new List<Point>();
-
-    public List<FuncionLinealLimitada> funcionLinealLimitadas = new List<FuncionLinealLimitada>(); 
 
     public List<Segmento> segmentosCortados = new List<Segmento>();
 
@@ -404,39 +357,6 @@ public class Voronoi2 : MonoBehaviour
                     segmentos.Add(edge);
             }
         }
-
-
-        //for (int i = 0; i < List_Nodes.Count; i++)
-        //{
-        //    float maxValue = 99999;
-        //    Point puntoMasCercano1 = new Point(Vector3.one * maxValue, 0, -1);
-        //    Point puntoMasCercano2 = new Point(Vector3.one * maxValue, 0, -1);
-        //    for (int j = i+1; j < List_Nodes.Count; j++)
-        //    {
-        //        if (Vector3.Distance(puntoMasCercano1.pos, List_Nodes[i].pos) > Vector3.Distance(List_Nodes[i].pos, List_Nodes[j].pos))
-        //        {
-        //            puntoMasCercano2 = puntoMasCercano1;
-        //            puntoMasCercano1 = List_Nodes[j];
-        //        }
-        //        else if (Vector3.Distance(puntoMasCercano2.pos, List_Nodes[i].pos) > Vector3.Distance(List_Nodes[i].pos, List_Nodes[j].pos))
-        //        {
-        //            puntoMasCercano2 = List_Nodes[j];
-        //        }
-        //    }
-        //    if (PreguntarSiElPuntoEsMayorAlLimite(puntoMasCercano1))
-        //        continue;
-        //
-        //    Segmento localSegmento1 = new Segmento(List_Nodes[i], puntoMasCercano1);
-        //    if (!PreguntarSiLaRelacionExiste(localSegmento1))
-        //        List_Segmentos.Add(localSegmento1);
-        //
-        //    if (PreguntarSiElPuntoEsMayorAlLimite(puntoMasCercano2))
-        //        continue;
-        //
-        //    Segmento localSegmento2 = new Segmento(List_Nodes[i], puntoMasCercano2);
-        //    if (!PreguntarSiLaRelacionExiste(localSegmento2))
-        //        List_Segmentos.Add(localSegmento2);
-        //}
     }
 
     public void InitBizectrizPerpendicular()
@@ -445,60 +365,15 @@ public class Voronoi2 : MonoBehaviour
 
         for (int i = 0; i < segmentos.Count; i++)
         {
-            Vector3 puntomedio = segmentos[i].ObtenerPuntoMedio();
+            Vector3 puntomedio;
+            if (modeActual == mode.normal)
+                puntomedio = segmentos[i].ObtenerPuntoMedio();
+            else
+                puntomedio = segmentos[i].ObtenerPuntoMedioModificadoPorPeso();
             float m = FuncionLineal.ObtenerPendienteMediatriz(segmentos[i].p1.pos, segmentos[i].p2.pos);
             FuncionLineal bizectrizPerpendicular = new FuncionLineal(puntomedio,m);
             bizectrizesPerpendiculares.Add(bizectrizPerpendicular);
         }
-
-        //for (int i = 0; i < List_Segmentos.Count; i++)
-        //{
-        //
-        //    FuncionLineal funcionLinealLocal = new FuncionLineal(
-        //            List_Segmentos[i].ObtenerPuntoMedio(),
-        //            FuncionLineal.ObtenerPendienteMediatriz(List_Segmentos[i].p1.pos, List_Segmentos[i].p2.pos));
-        //    funcionLinealLocal.Punto1Primo = List_Segmentos[i].p1;
-        //    funcionLinealLocal.Punto2Primo = List_Segmentos[i].p2;
-        //    BizectrizesPerpendiculares.Add(funcionLinealLocal);
-        //}
-        //List_SegmentosLimites = new List<Segmento>();
-        //for (int i = 0; i < BizectrizesPerpendiculares.Count; i++)
-        //{
-        //    Point p1 = null;
-        //    Point p2 = null;
-        //    float y = BizectrizesPerpendiculares[i].GetY(limits.x);
-        //    float x = limits.x;
-        //    if (y >= limits.y && y <= limits.y + limits.height)
-        //    {
-        //        p2 = p1;
-        //        p1 = new Point(new Vector3(x, y, 0), 0, -1);
-        //    }
-        //    y = BizectrizesPerpendiculares[i].GetY(limits.x + limits.width);
-        //    x = limits.x + limits.width;
-        //    if (y >= limits.y && y <= limits.y + limits.height)
-        //    {
-        //        p2 = p1;
-        //        p1 = new Point(new Vector3(x, y, 0), 0, -1);
-        //    }
-        //    y = limits.y;
-        //    x = BizectrizesPerpendiculares[i].GetX(limits.y);
-        //    if (x > limits.x && x < limits.x + limits.width)
-        //    {
-        //        p2 = p1;
-        //        p1 = new Point(new Vector3(x, y, 0), 0, -1);
-        //    }
-        //    y = limits.y + limits.height;
-        //    x = BizectrizesPerpendiculares[i].GetX(limits.y + limits.height);
-        //    if (x > limits.x && x < limits.x + limits.width)
-        //    {
-        //        p2 = p1;
-        //        p1 = new Point(new Vector3(x, y, 0), 0, -1);
-        //    }
-        //    Segmento LocalSegmento = new Segmento(p1, p2);
-        //    LocalSegmento.p1primo = BizectrizesPerpendiculares[i].Punto1Primo;
-        //    LocalSegmento.p2primo = BizectrizesPerpendiculares[i].Punto2Primo;
-        //    List_SegmentosLimites.Add(LocalSegmento);
-        //}
     }
 
     public void InitPuntosDeCorte()
@@ -604,11 +479,15 @@ public class Voronoi2 : MonoBehaviour
 
         for (int i = 0; i < segmentos.Count; i++)
         {
-                Point p1 = new Point(Vector3.one * 99999);
-                Segmento segmentomascercano = new Segmento(p1,p1);
-                Vector3 puntomedio = segmentos[i].ObtenerPuntoMedio();
-                float m = FuncionLineal.ObtenerPendienteMediatriz(segmentos[i].p1.pos, segmentos[i].p2.pos);
-                FuncionLineal bizectrizPerpendicular = new FuncionLineal(puntomedio, m);
+            Point p1 = new Point(Vector3.one * 99999);
+            Segmento segmentomascercano = new Segmento(p1,p1);
+            Vector3 puntomedio;
+            if(modeActual == mode.normal)
+                puntomedio = segmentos[i].ObtenerPuntoMedio();
+            else
+                puntomedio = segmentos[i].ObtenerPuntoMedioModificadoPorPeso();
+            float m = FuncionLineal.ObtenerPendienteMediatriz(segmentos[i].p1.pos, segmentos[i].p2.pos);
+            FuncionLineal bizectrizPerpendicular = new FuncionLineal(puntomedio, m);
             for (int j = 0; j < segmentosCortados.Count; j++)
             {
                 FuncionLineal bizectrizPerpendicular2 = new FuncionLineal(segmentosCortados[j].p1.pos, segmentosCortados[j].p2.pos);
@@ -616,10 +495,21 @@ public class Voronoi2 : MonoBehaviour
                 {
                     if (FuncionLineal.SeCortan(segmentosCortados[j], puntomedio))
                     {
-                        if (Vector3.Distance(puntomedio, segmentomascercano.ObtenerPuntoMedio()) >
-                       Vector3.Distance(puntomedio, segmentosCortados[j].ObtenerPuntoMedio()))
+                        if (modeActual == mode.normal)
                         {
-                            segmentomascercano = segmentosCortados[j];
+                            if (Vector3.Distance(puntomedio, segmentomascercano.ObtenerPuntoMedio()) >
+                                Vector3.Distance(puntomedio, segmentosCortados[j].ObtenerPuntoMedio()))
+                            {
+                                segmentomascercano = segmentosCortados[j];
+                            }
+                        }
+                        else
+                        {
+                            if (Vector3.Distance(puntomedio, segmentomascercano.ObtenerPuntoMedioModificadoPorPeso()) >
+                                Vector3.Distance(puntomedio, segmentosCortados[j].ObtenerPuntoMedioModificadoPorPeso()))
+                            {
+                                segmentomascercano = segmentosCortados[j];
+                            }
                         }
                     }
                     
@@ -629,239 +519,6 @@ public class Voronoi2 : MonoBehaviour
         }
     }
 
-    //private Point ObtenerPuntoDelTriangulo(Point a, Point b)
-    //{
-    //    
-    //    for (int i = 0; i < List_Segmentos.Count; i++)
-    //    {
-    //        if ((List_Segmentos[i].p1 == a && List_Segmentos[i].p2 == b) || (List_Segmentos[i].p2 == a && List_Segmentos[i].p1 == b))
-    //            continue;
-    //        for (int j = i+1; j < List_Segmentos.Count; j++)
-    //        {
-    //            if (List_Segmentos[i].p1 == a || List_Segmentos[i].p2 == a )
-    //            {
-    //                if (List_Segmentos[j].p1 == b || List_Segmentos[j].p2 == b)
-    //                {
-    //                    if (List_Segmentos[i].p1 == a)
-    //                    {
-    //                        return List_Segmentos[i].p2;
-    //                    }
-    //                    else
-    //                        return List_Segmentos[i].p1;
-    //                }
-    //            }
-    //            if (List_Segmentos[i].p1 == b || List_Segmentos[i].p2 == b)
-    //            {
-    //                if(List_Segmentos[j].p1 == a || List_Segmentos[j].p2 == a)
-    //                {
-    //                    if (List_Segmentos[i].p1 == a)
-    //                    {
-    //                        return List_Segmentos[i].p2;
-    //                    }
-    //                    else
-    //                        return List_Segmentos[i].p1;
-    //                }
-    //            }
-    //        }
-    //    }
-    //    return null;
-    //}
-
-    //public void InitTriangles()
-    //{
-    //    for (int i = 0; i < List_Segmentos.Count; i++)
-    //    {
-    //        for (int j = i + 1; j < List_Segmentos.Count; j++)
-    //        {
-    //            for (int w = j + 1; w < List_Segmentos.Count; w++)
-    //            {
-    //                int[] ides = new int[6];
-    //                ides[0] = List_Segmentos[i].p1.ID;
-    //                ides[1] = List_Segmentos[i].p2.ID;
-    //
-    //                ides[2] = List_Segmentos[j].p1.ID;
-    //                ides[3] = List_Segmentos[j].p2.ID;
-    //
-    //                ides[4] = List_Segmentos[w].p1.ID;
-    //                ides[5] = List_Segmentos[w].p2.ID;
-    //
-    //                bool[] coincidencias = new bool[3];
-    //                for (int z = 0; z < coincidencias.Length; z++)
-    //                    coincidencias[z] = false;
-    //                for (int z = 0; z < ides.Length; z++)
-    //                {
-    //                    for (int c = 0; c < ides.Length; c++)
-    //                    {
-    //                        if (c == z)
-    //                            continue;
-    //                        if (ides[z] == ides[c])
-    //                            for (int v = 0; v < coincidencias.Length; v++)
-    //                            {
-    //                                if (!coincidencias[v])
-    //                                {
-    //                                    coincidencias[v] = true;
-    //                                    break;
-    //                                }
-    //                            }
-    //                    }
-    //                }
-    //                if (coincidencias[0] && coincidencias[1] && coincidencias[2])
-    //                    if (!PreguntarSiElTrianguloExiste(List_Segmentos[i], List_Segmentos[j], List_Segmentos[w]))
-    //                        List_Triangleos.Add(new Triangle(List_Segmentos[i], List_Segmentos[j], List_Segmentos[w]));
-    //            }
-    //        }
-    //    }
-    //}
-
-    // private bool PreguntarSiElTrianguloExiste(Segmento a, Segmento b, Segmento c)
-    // {
-    //     for (int i = 0; i < List_Triangleos.Count; i++)
-    //     {
-    //         if (List_Triangleos[i].s12 == a)
-    //         {
-    //             if (List_Triangleos[i].s23 == b)
-    //             {
-    //                 if (List_Triangleos[i].s31 == c)
-    //                 {
-    //                     return true;
-    //                 }
-    //             }
-    //             if (List_Triangleos[i].s23 == c)
-    //             {
-    //                 if (List_Triangleos[i].s31 == b)
-    //                 {
-    //                     return true;
-    //                 }
-    //             }
-    //         }
-    //         if (List_Triangleos[i].s12 == b)
-    //         {
-    //             if (List_Triangleos[i].s23 == c)
-    //             {
-    //                 if (List_Triangleos[i].s31 == a)
-    //                 {
-    //                     return true;
-    //                 }
-    //             }
-    //             if (List_Triangleos[i].s23 == c)
-    //             {
-    //                 if (List_Triangleos[i].s31 == a)
-    //                 {
-    //                     return true;
-    //                 }
-    //             }
-    //         }
-    //         if (List_Triangleos[i].s12 == c)
-    //         {
-    //             if (List_Triangleos[i].s23 == a)
-    //             {
-    //                 if (List_Triangleos[i].s31 == b)
-    //                 {
-    //                     return true;
-    //                 }
-    //             }
-    //             if (List_Triangleos[i].s23 == b)
-    //             {
-    //                 if (List_Triangleos[i].s31 == a)
-    //                 {
-    //                     return true;
-    //                 }
-    //             }
-    //         }
-    //     }
-    //     return false;
-    // }
-
-
-    //private bool PreguntarSiLaRelacionExiste(int id1, int id2)
-    //{
-    //    for (int j = 0; j < List_Segmentos.Count; j++)
-    //    {
-    //        if (List_Segmentos[j].p1.ID == id1 && List_Segmentos[j].p2.ID == id2 || List_Segmentos[j].p1.ID == id2 && List_Segmentos[j].p2.ID == id1)
-    //        {
-    //            return true;
-    //        }
-    //    }
-    //    return false;
-    //}
-    //private bool PreguntarSiElPuntoEsMayorAlLimite(Point p)
-    //{
-    //    return limits.x + limits.width < p.pos.x;
-    //}
-    //
-    //private bool PreguntarSiLaRelacionExiste(Segmento s)
-    //{
-    //    for (int j = 0; j < List_Segmentos.Count; j++)
-    //    {
-    //        if (s == List_Segmentos[j])
-    //        {
-    //            return true;
-    //        }
-    //    }
-    //    return false;
-    //}
-
-    public void InitCorte()
-    {
-        segmentosCortados = new List<Segmento>();
-        for (int i = 0; i < interseccionesMediatrices.Count; i++)
-        {
-            for (int j = 0; j < bizectrizesPerpendiculares.Count; j++)
-            {
-
-            }
-        }
-    } 
-    //public void InitCorte2()
-    //{
-    //    for (int i = 0; i < List_SegmentosLimites.Count; i++)
-    //    {
-    //        List<Point> PuntosQueCortanElSegmento = new List<Point>();
-    //        for (int j = 0; j < interseccionesMediatrices.Count; j++)
-    //        {
-    //            if (FuncionLineal.SeCortan(List_SegmentosLimites[i], interseccionesMediatrices[j].pos))
-    //            {
-    //                PuntosQueCortanElSegmento.Add(interseccionesMediatrices[j]);
-    //            }
-    //        }
-    //        List<Segmento> RecortesPertenecientesAlSegmento = new List<Segmento>();
-    //        RecortesPertenecientesAlSegmento = Recorte(List_SegmentosLimites[i], PuntosQueCortanElSegmento);
-    //        Segmento CloserSegment = new Segmento( new Point(Vector3.one * 99999,0,-1), new Point(Vector3.one * 99999, 0, -1));
-    //        for (int j = 0; j < RecortesPertenecientesAlSegmento.Count; j++)
-    //        {
-    //            float d1 = RecortesPertenecientesAlSegmento[j].ObtenerDistanciaDelPuntoMedioAlPuntoDelSegmentoDeOrigen();
-    //            float d2 = CloserSegment.ObtenerDistanciaDelPuntoMedioAlPuntoDelSegmentoDeOrigen();
-    //
-    //
-    //            if (d1 < d2)
-    //            {
-    //                CloserSegment = RecortesPertenecientesAlSegmento[j];
-    //            }
-    //        }
-    //        List_Cortes.Add(CloserSegment);
-    //    }
-    //    LocalCorrutine = null;
-    //}
-    private List<Segmento> Recorte(Segmento a, List <Point> b)
-    {
-        List<Segmento> SegmentosQueResultantes = new List<Segmento>();
-        for (int i = 0; i < b.Count; i++)
-        {
-            if (FuncionLineal.SeCortan(a, b[i].pos))
-            {
-                Segmento localSegmento1 = new Segmento(a.p1, b[i]);
-                Segmento localSegmento2 = new Segmento(a.p2, b[i]);
-                localSegmento1.p1primo = a.p1primo;
-                localSegmento1.p2primo = a.p2primo;
-                localSegmento2.p1primo = a.p1primo;
-                localSegmento2.p2primo = a.p2primo;
-                SegmentosQueResultantes.Add(localSegmento1);
-                SegmentosQueResultantes.Add(localSegmento2);
-            }
-        }
-        return SegmentosQueResultantes;
-
-    }
 
     private void OnDrawGizmos()
     {
@@ -911,16 +568,35 @@ public class Voronoi2 : MonoBehaviour
                     {
                         if (bizectrizesPerpendiculares[i].m == 0)
                         {
-                            Gizmos.DrawLine(
-                                new Vector3(limits.x               , segmentos[i].ObtenerPuntoMedio().y),
-                                new Vector3(limits.x + limits.width, segmentos[i].ObtenerPuntoMedio().y));
+                            if (modeActual == mode.normal)
+                            {
+                                Gizmos.DrawLine(
+                                    new Vector3(limits.x               , segmentos[i].ObtenerPuntoMedio().y),
+                                    new Vector3(limits.x + limits.width, segmentos[i].ObtenerPuntoMedio().y));
+                            }
+                            else
+                            {
+                                Gizmos.DrawLine(
+                                    new Vector3(limits.x, segmentos[i].ObtenerPuntoMedioModificadoPorPeso().y),
+                                    new Vector3(limits.x + limits.width, segmentos[i].ObtenerPuntoMedioModificadoPorPeso().y));
+                            }
                             continue;
                         }
                         else //fijarse dentro de la funcion si se divide por 0, tiende a infinito, por ende pregunto esto.
                         {
-                            Gizmos.DrawLine(
-                            new Vector3(segmentos[i].ObtenerPuntoMedio().x, limits.y),
-                            new Vector3(segmentos[i].ObtenerPuntoMedio().x, limits.y + limits.height));
+                            if (modeActual == mode.normal)
+                            {
+                                Gizmos.DrawLine(
+                                new Vector3(segmentos[i].ObtenerPuntoMedio().x, limits.y),
+                                new Vector3(segmentos[i].ObtenerPuntoMedio().x, limits.y + limits.height));
+
+                            }
+                            else
+                            {
+                                Gizmos.DrawLine(
+                                new Vector3(segmentos[i].ObtenerPuntoMedioModificadoPorPeso().x, limits.y),
+                                new Vector3(segmentos[i].ObtenerPuntoMedioModificadoPorPeso().x, limits.y + limits.height));
+                            }
                             continue;
                         }
                     }

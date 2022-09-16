@@ -267,11 +267,12 @@ MonoBehaviour:
     y: -10
     width: 20
     height: 20
+  modeActual: 1
   NodesCuantity: 4
   puntos:
   - ID: 0
     pos: {x: -6, y: 7, z: 0}
-    weight: 1
+    weight: 0.5
   - ID: 1
     pos: {x: -6, y: -3, z: 0}
     weight: 1
@@ -286,7 +287,7 @@ MonoBehaviour:
     p1:
       ID: 0
       pos: {x: -6, y: 7, z: 0}
-      weight: 1
+      weight: 0.5
     p2:
       ID: 1
       pos: {x: -6, y: -3, z: 0}
@@ -303,7 +304,7 @@ MonoBehaviour:
     p1:
       ID: 0
       pos: {x: -6, y: 7, z: 0}
-      weight: 1
+      weight: 0.5
     p2:
       ID: 2
       pos: {x: 2, y: 5, z: 0}
@@ -320,7 +321,7 @@ MonoBehaviour:
     p1:
       ID: 0
       pos: {x: -6, y: 7, z: 0}
-      weight: 1
+      weight: 0.5
     p2:
       ID: 3
       pos: {x: 2, y: -5, z: 0}
@@ -384,7 +385,6 @@ MonoBehaviour:
       ID: -1
       pos: {x: -2, y: 5, z: -0}
       weight: 0
-  List_Triangleos: []
   bizectrizesPerpendiculares:
   - Punto1Primo:
       ID: 0
@@ -395,7 +395,7 @@ MonoBehaviour:
       pos: {x: 0, y: 0, z: 0}
       weight: 0
     m: 0
-    b: 2
+    b: 4.5
   - Punto1Primo:
       ID: 0
       pos: {x: 0, y: 0, z: 0}
@@ -405,7 +405,7 @@ MonoBehaviour:
       pos: {x: 0, y: 0, z: 0}
       weight: 0
     m: 4
-    b: 14
+    b: 22.5
   - Punto1Primo:
       ID: 0
       pos: {x: 0, y: 0, z: 0}
@@ -415,7 +415,7 @@ MonoBehaviour:
       pos: {x: 0, y: 0, z: 0}
       weight: 0
     m: 0.6666667
-    b: 2.3333335
+    b: 6.666667
   - Punto1Primo:
       ID: 0
       pos: {x: 0, y: 0, z: 0}
@@ -449,34 +449,49 @@ MonoBehaviour:
   List_SegmentosLimites: []
   interseccionesMediatrices:
   - ID: -1
-    pos: {x: -3, y: 2, z: 0}
+    pos: {x: -4.5, y: 4.5, z: 0}
     weight: 0
   - ID: -1
-    pos: {x: -0.50000024, y: 2, z: 0}
+    pos: {x: -3.2500005, y: 4.5, z: 0}
     weight: 0
   - ID: -1
-    pos: {x: -10, y: 2, z: 0}
-    weight: 1
-  - ID: -1
-    pos: {x: 10, y: 2, z: 0}
-    weight: 1
-  - ID: -1
-    pos: {x: -3.5, y: 0.00000010728836, z: 0}
+    pos: {x: -5.5, y: 4.5, z: 0}
     weight: 0
   - ID: -1
-    pos: {x: -6, y: -10, z: 0}
-    weight: 1
-  - ID: -1
-    pos: {x: -1, y: 10, z: 0}
-    weight: 1
-  - ID: -1
-    pos: {x: -2, y: 1.0000001, z: 0}
+    pos: {x: 0.125, y: 4.5, z: 0}
     weight: 0
   - ID: -1
-    pos: {x: -10, y: -4.3333335, z: 0}
+    pos: {x: -10, y: 4.5, z: 0}
     weight: 1
   - ID: -1
-    pos: {x: 10, y: 9, z: 0}
+    pos: {x: 10, y: 4.5, z: 0}
+    weight: 1
+  - ID: -1
+    pos: {x: -4.75, y: 3.5000002, z: 0}
+    weight: 0
+  - ID: -1
+    pos: {x: -4.7, y: 3.7, z: 0}
+    weight: 0
+  - ID: -1
+    pos: {x: -5.625, y: -0, z: 0}
+    weight: 0
+  - ID: -1
+    pos: {x: -8.125, y: -10, z: 0}
+    weight: 1
+  - ID: -1
+    pos: {x: -3.125, y: 10, z: 0}
+    weight: 1
+  - ID: -1
+    pos: {x: -4.6, y: 3.6000001, z: 0}
+    weight: 0
+  - ID: -1
+    pos: {x: 0.8000001, y: 7.2000003, z: 0}
+    weight: 0
+  - ID: -1
+    pos: {x: -10, y: -0, z: 0}
+    weight: 0
+  - ID: -1
+    pos: {x: 4.9999995, y: 10, z: 0}
     weight: 1
   - ID: -1
     pos: {x: -1, y: 0, z: 0}
@@ -494,170 +509,251 @@ MonoBehaviour:
     pos: {x: 1.5, y: 10, z: 0}
     weight: 1
   - ID: -1
-    pos: {x: -10, y: 0, z: 0}
-    weight: 1
-  - ID: -1
     pos: {x: 10, y: 0, z: 0}
     weight: 1
-  funcionLinealLimitadas: []
   segmentosCortados:
   - show: 0
     p1:
       ID: -1
-      pos: {x: -3, y: 2, z: 0}
+      pos: {x: -4.5, y: 4.5, z: 0}
       weight: 0
     p2:
       ID: -1
-      pos: {x: -0.50000024, y: 2, z: 0}
+      pos: {x: -3.2500005, y: 4.5, z: 0}
       weight: 0
     p1primo:
       ID: -1
-      pos: {x: 3, y: -2, z: -0}
+      pos: {x: 4.5, y: -4.5, z: -0}
       weight: 0
     p2primo:
       ID: -1
-      pos: {x: 0.50000024, y: -2, z: -0}
+      pos: {x: 3.2500005, y: -4.5, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: -4.5, y: 4.5, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: -5.5, y: 4.5, z: 0}
+      weight: 0
+    p1primo:
+      ID: -1
+      pos: {x: 4.5, y: -4.5, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: 5.5, y: -4.5, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: -4.5, y: 4.5, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: 0.125, y: 4.5, z: 0}
+      weight: 0
+    p1primo:
+      ID: -1
+      pos: {x: 4.5, y: -4.5, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: -0.125, y: -4.5, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: -4.5, y: 4.5, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: -10, y: 4.5, z: 0}
+      weight: 1
+    p1primo:
+      ID: -1
+      pos: {x: 4.5, y: -4.5, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: 10, y: -4.5, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: -4.5, y: 4.5, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: 10, y: 4.5, z: 0}
+      weight: 1
+    p1primo:
+      ID: -1
+      pos: {x: 4.5, y: -4.5, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: -10, y: -4.5, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: -4.5, y: 4.5, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: -4.75, y: 3.5000002, z: 0}
+      weight: 0
+    p1primo:
+      ID: -1
+      pos: {x: 4.5, y: -4.5, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: 4.75, y: -3.5000002, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: -4.5, y: 4.5, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: -4.7, y: 3.7, z: 0}
+      weight: 0
+    p1primo:
+      ID: -1
+      pos: {x: 4.5, y: -4.5, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: 4.7, y: -3.7, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: -4.5, y: 4.5, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: -5.625, y: -0, z: 0}
+      weight: 0
+    p1primo:
+      ID: -1
+      pos: {x: 4.5, y: -4.5, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: 5.625, y: 0, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: -4.5, y: 4.5, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: -8.125, y: -10, z: 0}
+      weight: 1
+    p1primo:
+      ID: -1
+      pos: {x: 4.5, y: -4.5, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: 8.125, y: 10, z: -0}
       weight: 0
   - show: 1
     p1:
       ID: -1
-      pos: {x: -3, y: 2, z: 0}
+      pos: {x: -4.5, y: 4.5, z: 0}
       weight: 0
     p2:
       ID: -1
-      pos: {x: -10, y: 2, z: 0}
+      pos: {x: -3.125, y: 10, z: 0}
       weight: 1
     p1primo:
       ID: -1
-      pos: {x: 3, y: -2, z: -0}
+      pos: {x: 4.5, y: -4.5, z: -0}
       weight: 0
     p2primo:
       ID: -1
-      pos: {x: 10, y: -2, z: -0}
+      pos: {x: 3.125, y: -10, z: -0}
       weight: 0
   - show: 0
     p1:
       ID: -1
-      pos: {x: -3, y: 2, z: 0}
+      pos: {x: -4.5, y: 4.5, z: 0}
       weight: 0
     p2:
       ID: -1
-      pos: {x: 10, y: 2, z: 0}
-      weight: 1
+      pos: {x: -4.6, y: 3.6000001, z: 0}
+      weight: 0
     p1primo:
       ID: -1
-      pos: {x: 3, y: -2, z: -0}
+      pos: {x: 4.5, y: -4.5, z: -0}
       weight: 0
     p2primo:
       ID: -1
-      pos: {x: -10, y: -2, z: -0}
+      pos: {x: 4.6, y: -3.6000001, z: -0}
       weight: 0
   - show: 0
     p1:
       ID: -1
-      pos: {x: -3, y: 2, z: 0}
+      pos: {x: -4.5, y: 4.5, z: 0}
       weight: 0
     p2:
       ID: -1
-      pos: {x: -3.5, y: 0.00000010728836, z: 0}
+      pos: {x: 0.8000001, y: 7.2000003, z: 0}
       weight: 0
     p1primo:
       ID: -1
-      pos: {x: 3, y: -2, z: -0}
+      pos: {x: 4.5, y: -4.5, z: -0}
       weight: 0
     p2primo:
       ID: -1
-      pos: {x: 3.5, y: -0.00000010728836, z: -0}
+      pos: {x: -0.8000001, y: -7.2000003, z: -0}
       weight: 0
   - show: 0
     p1:
       ID: -1
-      pos: {x: -3, y: 2, z: 0}
+      pos: {x: -4.5, y: 4.5, z: 0}
       weight: 0
     p2:
       ID: -1
-      pos: {x: -6, y: -10, z: 0}
-      weight: 1
+      pos: {x: -10, y: -0, z: 0}
+      weight: 0
     p1primo:
       ID: -1
-      pos: {x: 3, y: -2, z: -0}
+      pos: {x: 4.5, y: -4.5, z: -0}
       weight: 0
     p2primo:
       ID: -1
-      pos: {x: 6, y: 10, z: -0}
-      weight: 0
-  - show: 1
-    p1:
-      ID: -1
-      pos: {x: -3, y: 2, z: 0}
-      weight: 0
-    p2:
-      ID: -1
-      pos: {x: -1, y: 10, z: 0}
-      weight: 1
-    p1primo:
-      ID: -1
-      pos: {x: 3, y: -2, z: -0}
-      weight: 0
-    p2primo:
-      ID: -1
-      pos: {x: 1, y: -10, z: -0}
+      pos: {x: 10, y: 0, z: -0}
       weight: 0
   - show: 0
     p1:
       ID: -1
-      pos: {x: -3, y: 2, z: 0}
+      pos: {x: -4.5, y: 4.5, z: 0}
       weight: 0
     p2:
       ID: -1
-      pos: {x: -2, y: 1.0000001, z: 0}
-      weight: 0
+      pos: {x: 4.9999995, y: 10, z: 0}
+      weight: 1
     p1primo:
       ID: -1
-      pos: {x: 3, y: -2, z: -0}
+      pos: {x: 4.5, y: -4.5, z: -0}
       weight: 0
     p2primo:
       ID: -1
-      pos: {x: 2, y: -1.0000001, z: -0}
+      pos: {x: -4.9999995, y: -10, z: -0}
       weight: 0
   - show: 0
     p1:
       ID: -1
-      pos: {x: -3, y: 2, z: 0}
-      weight: 0
-    p2:
-      ID: -1
-      pos: {x: -10, y: -4.3333335, z: 0}
-      weight: 1
-    p1primo:
-      ID: -1
-      pos: {x: 3, y: -2, z: -0}
-      weight: 0
-    p2primo:
-      ID: -1
-      pos: {x: 10, y: 4.3333335, z: -0}
-      weight: 0
-  - show: 0
-    p1:
-      ID: -1
-      pos: {x: -3, y: 2, z: 0}
-      weight: 0
-    p2:
-      ID: -1
-      pos: {x: 10, y: 9, z: 0}
-      weight: 1
-    p1primo:
-      ID: -1
-      pos: {x: 3, y: -2, z: -0}
-      weight: 0
-    p2primo:
-      ID: -1
-      pos: {x: -10, y: -9, z: -0}
-      weight: 0
-  - show: 1
-    p1:
-      ID: -1
-      pos: {x: -3, y: 2, z: 0}
+      pos: {x: -4.5, y: 4.5, z: 0}
       weight: 0
     p2:
       ID: -1
@@ -665,7 +761,7 @@ MonoBehaviour:
       weight: 0
     p1primo:
       ID: -1
-      pos: {x: 3, y: -2, z: -0}
+      pos: {x: 4.5, y: -4.5, z: -0}
       weight: 0
     p2primo:
       ID: -1
@@ -674,7 +770,7 @@ MonoBehaviour:
   - show: 0
     p1:
       ID: -1
-      pos: {x: -3, y: 2, z: 0}
+      pos: {x: -4.5, y: 4.5, z: 0}
       weight: 0
     p2:
       ID: -1
@@ -682,7 +778,7 @@ MonoBehaviour:
       weight: 1
     p1primo:
       ID: -1
-      pos: {x: 3, y: -2, z: -0}
+      pos: {x: 4.5, y: -4.5, z: -0}
       weight: 0
     p2primo:
       ID: -1
@@ -691,7 +787,7 @@ MonoBehaviour:
   - show: 0
     p1:
       ID: -1
-      pos: {x: -3, y: 2, z: 0}
+      pos: {x: -4.5, y: 4.5, z: 0}
       weight: 0
     p2:
       ID: -1
@@ -699,7 +795,7 @@ MonoBehaviour:
       weight: 1
     p1primo:
       ID: -1
-      pos: {x: 3, y: -2, z: -0}
+      pos: {x: 4.5, y: -4.5, z: -0}
       weight: 0
     p2primo:
       ID: -1
@@ -708,7 +804,7 @@ MonoBehaviour:
   - show: 0
     p1:
       ID: -1
-      pos: {x: -3, y: 2, z: 0}
+      pos: {x: -4.5, y: 4.5, z: 0}
       weight: 0
     p2:
       ID: -1
@@ -716,7 +812,7 @@ MonoBehaviour:
       weight: 1
     p1primo:
       ID: -1
-      pos: {x: 3, y: -2, z: -0}
+      pos: {x: 4.5, y: -4.5, z: -0}
       weight: 0
     p2primo:
       ID: -1
@@ -725,7 +821,7 @@ MonoBehaviour:
   - show: 0
     p1:
       ID: -1
-      pos: {x: -3, y: 2, z: 0}
+      pos: {x: -4.5, y: 4.5, z: 0}
       weight: 0
     p2:
       ID: -1
@@ -733,7 +829,7 @@ MonoBehaviour:
       weight: 1
     p1primo:
       ID: -1
-      pos: {x: 3, y: -2, z: -0}
+      pos: {x: 4.5, y: -4.5, z: -0}
       weight: 0
     p2primo:
       ID: -1
@@ -742,24 +838,7 @@ MonoBehaviour:
   - show: 0
     p1:
       ID: -1
-      pos: {x: -3, y: 2, z: 0}
-      weight: 0
-    p2:
-      ID: -1
-      pos: {x: -10, y: 0, z: 0}
-      weight: 1
-    p1primo:
-      ID: -1
-      pos: {x: 3, y: -2, z: -0}
-      weight: 0
-    p2primo:
-      ID: -1
-      pos: {x: 10, y: -0, z: -0}
-      weight: 0
-  - show: 0
-    p1:
-      ID: -1
-      pos: {x: -3, y: 2, z: 0}
+      pos: {x: -4.5, y: 4.5, z: 0}
       weight: 0
     p2:
       ID: -1
@@ -767,7 +846,7 @@ MonoBehaviour:
       weight: 1
     p1primo:
       ID: -1
-      pos: {x: 3, y: -2, z: -0}
+      pos: {x: 4.5, y: -4.5, z: -0}
       weight: 0
     p2primo:
       ID: -1
@@ -776,143 +855,228 @@ MonoBehaviour:
   - show: 0
     p1:
       ID: -1
-      pos: {x: -0.50000024, y: 2, z: 0}
+      pos: {x: -3.2500005, y: 4.5, z: 0}
       weight: 0
     p2:
       ID: -1
-      pos: {x: -10, y: 2, z: 0}
+      pos: {x: -5.5, y: 4.5, z: 0}
+      weight: 0
+    p1primo:
+      ID: -1
+      pos: {x: 3.2500005, y: -4.5, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: 5.5, y: -4.5, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: -3.2500005, y: 4.5, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: 0.125, y: 4.5, z: 0}
+      weight: 0
+    p1primo:
+      ID: -1
+      pos: {x: 3.2500005, y: -4.5, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: -0.125, y: -4.5, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: -3.2500005, y: 4.5, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: -10, y: 4.5, z: 0}
       weight: 1
     p1primo:
       ID: -1
-      pos: {x: 0.50000024, y: -2, z: -0}
+      pos: {x: 3.2500005, y: -4.5, z: -0}
       weight: 0
     p2primo:
       ID: -1
-      pos: {x: 10, y: -2, z: -0}
+      pos: {x: 10, y: -4.5, z: -0}
       weight: 0
   - show: 0
     p1:
       ID: -1
-      pos: {x: -0.50000024, y: 2, z: 0}
+      pos: {x: -3.2500005, y: 4.5, z: 0}
       weight: 0
     p2:
       ID: -1
-      pos: {x: 10, y: 2, z: 0}
+      pos: {x: 10, y: 4.5, z: 0}
       weight: 1
     p1primo:
       ID: -1
-      pos: {x: 0.50000024, y: -2, z: -0}
+      pos: {x: 3.2500005, y: -4.5, z: -0}
       weight: 0
     p2primo:
       ID: -1
-      pos: {x: -10, y: -2, z: -0}
+      pos: {x: -10, y: -4.5, z: -0}
       weight: 0
   - show: 0
     p1:
       ID: -1
-      pos: {x: -0.50000024, y: 2, z: 0}
+      pos: {x: -3.2500005, y: 4.5, z: 0}
       weight: 0
     p2:
       ID: -1
-      pos: {x: -3.5, y: 0.00000010728836, z: 0}
+      pos: {x: -4.75, y: 3.5000002, z: 0}
       weight: 0
     p1primo:
       ID: -1
-      pos: {x: 0.50000024, y: -2, z: -0}
+      pos: {x: 3.2500005, y: -4.5, z: -0}
       weight: 0
     p2primo:
       ID: -1
-      pos: {x: 3.5, y: -0.00000010728836, z: -0}
+      pos: {x: 4.75, y: -3.5000002, z: -0}
       weight: 0
   - show: 0
     p1:
       ID: -1
-      pos: {x: -0.50000024, y: 2, z: 0}
+      pos: {x: -3.2500005, y: 4.5, z: 0}
       weight: 0
     p2:
       ID: -1
-      pos: {x: -6, y: -10, z: 0}
+      pos: {x: -4.7, y: 3.7, z: 0}
+      weight: 0
+    p1primo:
+      ID: -1
+      pos: {x: 3.2500005, y: -4.5, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: 4.7, y: -3.7, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: -3.2500005, y: 4.5, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: -5.625, y: -0, z: 0}
+      weight: 0
+    p1primo:
+      ID: -1
+      pos: {x: 3.2500005, y: -4.5, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: 5.625, y: 0, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: -3.2500005, y: 4.5, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: -8.125, y: -10, z: 0}
       weight: 1
     p1primo:
       ID: -1
-      pos: {x: 0.50000024, y: -2, z: -0}
+      pos: {x: 3.2500005, y: -4.5, z: -0}
       weight: 0
     p2primo:
       ID: -1
-      pos: {x: 6, y: 10, z: -0}
+      pos: {x: 8.125, y: 10, z: -0}
       weight: 0
   - show: 0
     p1:
       ID: -1
-      pos: {x: -0.50000024, y: 2, z: 0}
+      pos: {x: -3.2500005, y: 4.5, z: 0}
       weight: 0
     p2:
       ID: -1
-      pos: {x: -1, y: 10, z: 0}
+      pos: {x: -3.125, y: 10, z: 0}
       weight: 1
     p1primo:
       ID: -1
-      pos: {x: 0.50000024, y: -2, z: -0}
+      pos: {x: 3.2500005, y: -4.5, z: -0}
       weight: 0
     p2primo:
       ID: -1
-      pos: {x: 1, y: -10, z: -0}
+      pos: {x: 3.125, y: -10, z: -0}
       weight: 0
   - show: 0
     p1:
       ID: -1
-      pos: {x: -0.50000024, y: 2, z: 0}
+      pos: {x: -3.2500005, y: 4.5, z: 0}
       weight: 0
     p2:
       ID: -1
-      pos: {x: -2, y: 1.0000001, z: 0}
+      pos: {x: -4.6, y: 3.6000001, z: 0}
       weight: 0
     p1primo:
       ID: -1
-      pos: {x: 0.50000024, y: -2, z: -0}
+      pos: {x: 3.2500005, y: -4.5, z: -0}
       weight: 0
     p2primo:
       ID: -1
-      pos: {x: 2, y: -1.0000001, z: -0}
+      pos: {x: 4.6, y: -3.6000001, z: -0}
       weight: 0
   - show: 0
     p1:
       ID: -1
-      pos: {x: -0.50000024, y: 2, z: 0}
+      pos: {x: -3.2500005, y: 4.5, z: 0}
       weight: 0
     p2:
       ID: -1
-      pos: {x: -10, y: -4.3333335, z: 0}
+      pos: {x: 0.8000001, y: 7.2000003, z: 0}
+      weight: 0
+    p1primo:
+      ID: -1
+      pos: {x: 3.2500005, y: -4.5, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: -0.8000001, y: -7.2000003, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: -3.2500005, y: 4.5, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: -10, y: -0, z: 0}
+      weight: 0
+    p1primo:
+      ID: -1
+      pos: {x: 3.2500005, y: -4.5, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: 10, y: 0, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: -3.2500005, y: 4.5, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: 4.9999995, y: 10, z: 0}
       weight: 1
     p1primo:
       ID: -1
-      pos: {x: 0.50000024, y: -2, z: -0}
+      pos: {x: 3.2500005, y: -4.5, z: -0}
       weight: 0
     p2primo:
       ID: -1
-      pos: {x: 10, y: 4.3333335, z: -0}
+      pos: {x: -4.9999995, y: -10, z: -0}
       weight: 0
   - show: 0
     p1:
       ID: -1
-      pos: {x: -0.50000024, y: 2, z: 0}
-      weight: 0
-    p2:
-      ID: -1
-      pos: {x: 10, y: 9, z: 0}
-      weight: 1
-    p1primo:
-      ID: -1
-      pos: {x: 0.50000024, y: -2, z: -0}
-      weight: 0
-    p2primo:
-      ID: -1
-      pos: {x: -10, y: -9, z: -0}
-      weight: 0
-  - show: 0
-    p1:
-      ID: -1
-      pos: {x: -0.50000024, y: 2, z: 0}
+      pos: {x: -3.2500005, y: 4.5, z: 0}
       weight: 0
     p2:
       ID: -1
@@ -920,7 +1084,7 @@ MonoBehaviour:
       weight: 0
     p1primo:
       ID: -1
-      pos: {x: 0.50000024, y: -2, z: -0}
+      pos: {x: 3.2500005, y: -4.5, z: -0}
       weight: 0
     p2primo:
       ID: -1
@@ -929,7 +1093,7 @@ MonoBehaviour:
   - show: 0
     p1:
       ID: -1
-      pos: {x: -0.50000024, y: 2, z: 0}
+      pos: {x: -3.2500005, y: 4.5, z: 0}
       weight: 0
     p2:
       ID: -1
@@ -937,7 +1101,7 @@ MonoBehaviour:
       weight: 1
     p1primo:
       ID: -1
-      pos: {x: 0.50000024, y: -2, z: -0}
+      pos: {x: 3.2500005, y: -4.5, z: -0}
       weight: 0
     p2primo:
       ID: -1
@@ -946,7 +1110,7 @@ MonoBehaviour:
   - show: 0
     p1:
       ID: -1
-      pos: {x: -0.50000024, y: 2, z: 0}
+      pos: {x: -3.2500005, y: 4.5, z: 0}
       weight: 0
     p2:
       ID: -1
@@ -954,7 +1118,7 @@ MonoBehaviour:
       weight: 1
     p1primo:
       ID: -1
-      pos: {x: 0.50000024, y: -2, z: -0}
+      pos: {x: 3.2500005, y: -4.5, z: -0}
       weight: 0
     p2primo:
       ID: -1
@@ -963,7 +1127,7 @@ MonoBehaviour:
   - show: 0
     p1:
       ID: -1
-      pos: {x: -0.50000024, y: 2, z: 0}
+      pos: {x: -3.2500005, y: 4.5, z: 0}
       weight: 0
     p2:
       ID: -1
@@ -971,7 +1135,7 @@ MonoBehaviour:
       weight: 1
     p1primo:
       ID: -1
-      pos: {x: 0.50000024, y: -2, z: -0}
+      pos: {x: 3.2500005, y: -4.5, z: -0}
       weight: 0
     p2primo:
       ID: -1
@@ -980,7 +1144,7 @@ MonoBehaviour:
   - show: 0
     p1:
       ID: -1
-      pos: {x: -0.50000024, y: 2, z: 0}
+      pos: {x: -3.2500005, y: 4.5, z: 0}
       weight: 0
     p2:
       ID: -1
@@ -988,7 +1152,7 @@ MonoBehaviour:
       weight: 1
     p1primo:
       ID: -1
-      pos: {x: 0.50000024, y: -2, z: -0}
+      pos: {x: 3.2500005, y: -4.5, z: -0}
       weight: 0
     p2primo:
       ID: -1
@@ -997,24 +1161,7 @@ MonoBehaviour:
   - show: 0
     p1:
       ID: -1
-      pos: {x: -0.50000024, y: 2, z: 0}
-      weight: 0
-    p2:
-      ID: -1
-      pos: {x: -10, y: 0, z: 0}
-      weight: 1
-    p1primo:
-      ID: -1
-      pos: {x: 0.50000024, y: -2, z: -0}
-      weight: 0
-    p2primo:
-      ID: -1
-      pos: {x: 10, y: -0, z: -0}
-      weight: 0
-  - show: 0
-    p1:
-      ID: -1
-      pos: {x: -0.50000024, y: 2, z: 0}
+      pos: {x: -3.2500005, y: 4.5, z: 0}
       weight: 0
     p2:
       ID: -1
@@ -1022,7 +1169,7 @@ MonoBehaviour:
       weight: 1
     p1primo:
       ID: -1
-      pos: {x: 0.50000024, y: -2, z: -0}
+      pos: {x: 3.2500005, y: -4.5, z: -0}
       weight: 0
     p2primo:
       ID: -1
@@ -1031,49 +1178,219 @@ MonoBehaviour:
   - show: 0
     p1:
       ID: -1
-      pos: {x: -10, y: 2, z: 0}
-      weight: 1
+      pos: {x: -5.5, y: 4.5, z: 0}
+      weight: 0
     p2:
       ID: -1
-      pos: {x: -3.5, y: 0.00000010728836, z: 0}
+      pos: {x: 0.125, y: 4.5, z: 0}
       weight: 0
     p1primo:
       ID: -1
-      pos: {x: 10, y: -2, z: -0}
+      pos: {x: 5.5, y: -4.5, z: -0}
       weight: 0
     p2primo:
       ID: -1
-      pos: {x: 3.5, y: -0.00000010728836, z: -0}
+      pos: {x: -0.125, y: -4.5, z: -0}
+      weight: 0
+  - show: 1
+    p1:
+      ID: -1
+      pos: {x: -5.5, y: 4.5, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: -10, y: 4.5, z: 0}
+      weight: 1
+    p1primo:
+      ID: -1
+      pos: {x: 5.5, y: -4.5, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: 10, y: -4.5, z: -0}
       weight: 0
   - show: 0
     p1:
       ID: -1
-      pos: {x: -10, y: 2, z: 0}
-      weight: 1
+      pos: {x: -5.5, y: 4.5, z: 0}
+      weight: 0
     p2:
       ID: -1
-      pos: {x: -2, y: 1.0000001, z: 0}
-      weight: 0
+      pos: {x: 10, y: 4.5, z: 0}
+      weight: 1
     p1primo:
       ID: -1
-      pos: {x: 10, y: -2, z: -0}
+      pos: {x: 5.5, y: -4.5, z: -0}
       weight: 0
     p2primo:
       ID: -1
-      pos: {x: 2, y: -1.0000001, z: -0}
+      pos: {x: -10, y: -4.5, z: -0}
       weight: 0
   - show: 0
     p1:
       ID: -1
-      pos: {x: -10, y: 2, z: 0}
+      pos: {x: -5.5, y: 4.5, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: -4.75, y: 3.5000002, z: 0}
+      weight: 0
+    p1primo:
+      ID: -1
+      pos: {x: 5.5, y: -4.5, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: 4.75, y: -3.5000002, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: -5.5, y: 4.5, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: -4.7, y: 3.7, z: 0}
+      weight: 0
+    p1primo:
+      ID: -1
+      pos: {x: 5.5, y: -4.5, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: 4.7, y: -3.7, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: -5.5, y: 4.5, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: -5.625, y: -0, z: 0}
+      weight: 0
+    p1primo:
+      ID: -1
+      pos: {x: 5.5, y: -4.5, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: 5.625, y: 0, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: -5.5, y: 4.5, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: -8.125, y: -10, z: 0}
       weight: 1
+    p1primo:
+      ID: -1
+      pos: {x: 5.5, y: -4.5, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: 8.125, y: 10, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: -5.5, y: 4.5, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: -3.125, y: 10, z: 0}
+      weight: 1
+    p1primo:
+      ID: -1
+      pos: {x: 5.5, y: -4.5, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: 3.125, y: -10, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: -5.5, y: 4.5, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: -4.6, y: 3.6000001, z: 0}
+      weight: 0
+    p1primo:
+      ID: -1
+      pos: {x: 5.5, y: -4.5, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: 4.6, y: -3.6000001, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: -5.5, y: 4.5, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: 0.8000001, y: 7.2000003, z: 0}
+      weight: 0
+    p1primo:
+      ID: -1
+      pos: {x: 5.5, y: -4.5, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: -0.8000001, y: -7.2000003, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: -5.5, y: 4.5, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: -10, y: -0, z: 0}
+      weight: 0
+    p1primo:
+      ID: -1
+      pos: {x: 5.5, y: -4.5, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: 10, y: 0, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: -5.5, y: 4.5, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: 4.9999995, y: 10, z: 0}
+      weight: 1
+    p1primo:
+      ID: -1
+      pos: {x: 5.5, y: -4.5, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: -4.9999995, y: -10, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: -5.5, y: 4.5, z: 0}
+      weight: 0
     p2:
       ID: -1
       pos: {x: -1, y: 0, z: 0}
       weight: 0
     p1primo:
       ID: -1
-      pos: {x: 10, y: -2, z: -0}
+      pos: {x: 5.5, y: -4.5, z: -0}
       weight: 0
     p2primo:
       ID: -1
@@ -1082,160 +1399,7 @@ MonoBehaviour:
   - show: 0
     p1:
       ID: -1
-      pos: {x: 10, y: 2, z: 0}
-      weight: 1
-    p2:
-      ID: -1
-      pos: {x: -3.5, y: 0.00000010728836, z: 0}
-      weight: 0
-    p1primo:
-      ID: -1
-      pos: {x: -10, y: -2, z: -0}
-      weight: 0
-    p2primo:
-      ID: -1
-      pos: {x: 3.5, y: -0.00000010728836, z: -0}
-      weight: 0
-  - show: 0
-    p1:
-      ID: -1
-      pos: {x: 10, y: 2, z: 0}
-      weight: 1
-    p2:
-      ID: -1
-      pos: {x: -2, y: 1.0000001, z: 0}
-      weight: 0
-    p1primo:
-      ID: -1
-      pos: {x: -10, y: -2, z: -0}
-      weight: 0
-    p2primo:
-      ID: -1
-      pos: {x: 2, y: -1.0000001, z: -0}
-      weight: 0
-  - show: 0
-    p1:
-      ID: -1
-      pos: {x: 10, y: 2, z: 0}
-      weight: 1
-    p2:
-      ID: -1
-      pos: {x: -1, y: 0, z: 0}
-      weight: 0
-    p1primo:
-      ID: -1
-      pos: {x: -10, y: -2, z: -0}
-      weight: 0
-    p2primo:
-      ID: -1
-      pos: {x: 1, y: -0, z: -0}
-      weight: 0
-  - show: 0
-    p1:
-      ID: -1
-      pos: {x: -3.5, y: 0.00000010728836, z: 0}
-      weight: 0
-    p2:
-      ID: -1
-      pos: {x: -6, y: -10, z: 0}
-      weight: 1
-    p1primo:
-      ID: -1
-      pos: {x: 3.5, y: -0.00000010728836, z: -0}
-      weight: 0
-    p2primo:
-      ID: -1
-      pos: {x: 6, y: 10, z: -0}
-      weight: 0
-  - show: 0
-    p1:
-      ID: -1
-      pos: {x: -3.5, y: 0.00000010728836, z: 0}
-      weight: 0
-    p2:
-      ID: -1
-      pos: {x: -1, y: 10, z: 0}
-      weight: 1
-    p1primo:
-      ID: -1
-      pos: {x: 3.5, y: -0.00000010728836, z: -0}
-      weight: 0
-    p2primo:
-      ID: -1
-      pos: {x: 1, y: -10, z: -0}
-      weight: 0
-  - show: 0
-    p1:
-      ID: -1
-      pos: {x: -3.5, y: 0.00000010728836, z: 0}
-      weight: 0
-    p2:
-      ID: -1
-      pos: {x: -2, y: 1.0000001, z: 0}
-      weight: 0
-    p1primo:
-      ID: -1
-      pos: {x: 3.5, y: -0.00000010728836, z: -0}
-      weight: 0
-    p2primo:
-      ID: -1
-      pos: {x: 2, y: -1.0000001, z: -0}
-      weight: 0
-  - show: 0
-    p1:
-      ID: -1
-      pos: {x: -3.5, y: 0.00000010728836, z: 0}
-      weight: 0
-    p2:
-      ID: -1
-      pos: {x: -10, y: -4.3333335, z: 0}
-      weight: 1
-    p1primo:
-      ID: -1
-      pos: {x: 3.5, y: -0.00000010728836, z: -0}
-      weight: 0
-    p2primo:
-      ID: -1
-      pos: {x: 10, y: 4.3333335, z: -0}
-      weight: 0
-  - show: 0
-    p1:
-      ID: -1
-      pos: {x: -3.5, y: 0.00000010728836, z: 0}
-      weight: 0
-    p2:
-      ID: -1
-      pos: {x: 10, y: 9, z: 0}
-      weight: 1
-    p1primo:
-      ID: -1
-      pos: {x: 3.5, y: -0.00000010728836, z: -0}
-      weight: 0
-    p2primo:
-      ID: -1
-      pos: {x: -10, y: -9, z: -0}
-      weight: 0
-  - show: 0
-    p1:
-      ID: -1
-      pos: {x: -3.5, y: 0.00000010728836, z: 0}
-      weight: 0
-    p2:
-      ID: -1
-      pos: {x: -1, y: 0, z: 0}
-      weight: 0
-    p1primo:
-      ID: -1
-      pos: {x: 3.5, y: -0.00000010728836, z: -0}
-      weight: 0
-    p2primo:
-      ID: -1
-      pos: {x: 1, y: -0, z: -0}
-      weight: 0
-  - show: 0
-    p1:
-      ID: -1
-      pos: {x: -3.5, y: 0.00000010728836, z: 0}
+      pos: {x: -5.5, y: 4.5, z: 0}
       weight: 0
     p2:
       ID: -1
@@ -1243,7 +1407,7 @@ MonoBehaviour:
       weight: 1
     p1primo:
       ID: -1
-      pos: {x: 3.5, y: -0.00000010728836, z: -0}
+      pos: {x: 5.5, y: -4.5, z: -0}
       weight: 0
     p2primo:
       ID: -1
@@ -1252,7 +1416,7 @@ MonoBehaviour:
   - show: 0
     p1:
       ID: -1
-      pos: {x: -3.5, y: 0.00000010728836, z: 0}
+      pos: {x: -5.5, y: 4.5, z: 0}
       weight: 0
     p2:
       ID: -1
@@ -1260,7 +1424,7 @@ MonoBehaviour:
       weight: 1
     p1primo:
       ID: -1
-      pos: {x: 3.5, y: -0.00000010728836, z: -0}
+      pos: {x: 5.5, y: -4.5, z: -0}
       weight: 0
     p2primo:
       ID: -1
@@ -1269,7 +1433,7 @@ MonoBehaviour:
   - show: 0
     p1:
       ID: -1
-      pos: {x: -3.5, y: 0.00000010728836, z: 0}
+      pos: {x: -5.5, y: 4.5, z: 0}
       weight: 0
     p2:
       ID: -1
@@ -1277,7 +1441,7 @@ MonoBehaviour:
       weight: 1
     p1primo:
       ID: -1
-      pos: {x: 3.5, y: -0.00000010728836, z: -0}
+      pos: {x: 5.5, y: -4.5, z: -0}
       weight: 0
     p2primo:
       ID: -1
@@ -1286,7 +1450,7 @@ MonoBehaviour:
   - show: 0
     p1:
       ID: -1
-      pos: {x: -3.5, y: 0.00000010728836, z: 0}
+      pos: {x: -5.5, y: 4.5, z: 0}
       weight: 0
     p2:
       ID: -1
@@ -1294,7 +1458,7 @@ MonoBehaviour:
       weight: 1
     p1primo:
       ID: -1
-      pos: {x: 3.5, y: -0.00000010728836, z: -0}
+      pos: {x: 5.5, y: -4.5, z: -0}
       weight: 0
     p2primo:
       ID: -1
@@ -1303,24 +1467,7 @@ MonoBehaviour:
   - show: 0
     p1:
       ID: -1
-      pos: {x: -3.5, y: 0.00000010728836, z: 0}
-      weight: 0
-    p2:
-      ID: -1
-      pos: {x: -10, y: 0, z: 0}
-      weight: 1
-    p1primo:
-      ID: -1
-      pos: {x: 3.5, y: -0.00000010728836, z: -0}
-      weight: 0
-    p2primo:
-      ID: -1
-      pos: {x: 10, y: -0, z: -0}
-      weight: 0
-  - show: 0
-    p1:
-      ID: -1
-      pos: {x: -3.5, y: 0.00000010728836, z: 0}
+      pos: {x: -5.5, y: 4.5, z: 0}
       weight: 0
     p2:
       ID: -1
@@ -1328,7 +1475,7 @@ MonoBehaviour:
       weight: 1
     p1primo:
       ID: -1
-      pos: {x: 3.5, y: -0.00000010728836, z: -0}
+      pos: {x: 5.5, y: -4.5, z: -0}
       weight: 0
     p2primo:
       ID: -1
@@ -1337,32 +1484,202 @@ MonoBehaviour:
   - show: 0
     p1:
       ID: -1
-      pos: {x: -6, y: -10, z: 0}
-      weight: 1
+      pos: {x: 0.125, y: 4.5, z: 0}
+      weight: 0
     p2:
       ID: -1
-      pos: {x: -2, y: 1.0000001, z: 0}
-      weight: 0
+      pos: {x: -10, y: 4.5, z: 0}
+      weight: 1
     p1primo:
       ID: -1
-      pos: {x: 6, y: 10, z: -0}
+      pos: {x: -0.125, y: -4.5, z: -0}
       weight: 0
     p2primo:
       ID: -1
-      pos: {x: 2, y: -1.0000001, z: -0}
+      pos: {x: 10, y: -4.5, z: -0}
       weight: 0
   - show: 0
     p1:
       ID: -1
-      pos: {x: -6, y: -10, z: 0}
+      pos: {x: 0.125, y: 4.5, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: 10, y: 4.5, z: 0}
       weight: 1
+    p1primo:
+      ID: -1
+      pos: {x: -0.125, y: -4.5, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: -10, y: -4.5, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: 0.125, y: 4.5, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: -4.75, y: 3.5000002, z: 0}
+      weight: 0
+    p1primo:
+      ID: -1
+      pos: {x: -0.125, y: -4.5, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: 4.75, y: -3.5000002, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: 0.125, y: 4.5, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: -4.7, y: 3.7, z: 0}
+      weight: 0
+    p1primo:
+      ID: -1
+      pos: {x: -0.125, y: -4.5, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: 4.7, y: -3.7, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: 0.125, y: 4.5, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: -5.625, y: -0, z: 0}
+      weight: 0
+    p1primo:
+      ID: -1
+      pos: {x: -0.125, y: -4.5, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: 5.625, y: 0, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: 0.125, y: 4.5, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: -8.125, y: -10, z: 0}
+      weight: 1
+    p1primo:
+      ID: -1
+      pos: {x: -0.125, y: -4.5, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: 8.125, y: 10, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: 0.125, y: 4.5, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: -3.125, y: 10, z: 0}
+      weight: 1
+    p1primo:
+      ID: -1
+      pos: {x: -0.125, y: -4.5, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: 3.125, y: -10, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: 0.125, y: 4.5, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: -4.6, y: 3.6000001, z: 0}
+      weight: 0
+    p1primo:
+      ID: -1
+      pos: {x: -0.125, y: -4.5, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: 4.6, y: -3.6000001, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: 0.125, y: 4.5, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: 0.8000001, y: 7.2000003, z: 0}
+      weight: 0
+    p1primo:
+      ID: -1
+      pos: {x: -0.125, y: -4.5, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: -0.8000001, y: -7.2000003, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: 0.125, y: 4.5, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: -10, y: -0, z: 0}
+      weight: 0
+    p1primo:
+      ID: -1
+      pos: {x: -0.125, y: -4.5, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: 10, y: 0, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: 0.125, y: 4.5, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: 4.9999995, y: 10, z: 0}
+      weight: 1
+    p1primo:
+      ID: -1
+      pos: {x: -0.125, y: -4.5, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: -4.9999995, y: -10, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: 0.125, y: 4.5, z: 0}
+      weight: 0
     p2:
       ID: -1
       pos: {x: -1, y: 0, z: 0}
       weight: 0
     p1primo:
       ID: -1
-      pos: {x: 6, y: 10, z: -0}
+      pos: {x: -0.125, y: -4.5, z: -0}
       weight: 0
     p2primo:
       ID: -1
@@ -1371,92 +1688,7 @@ MonoBehaviour:
   - show: 0
     p1:
       ID: -1
-      pos: {x: -1, y: 10, z: 0}
-      weight: 1
-    p2:
-      ID: -1
-      pos: {x: -2, y: 1.0000001, z: 0}
-      weight: 0
-    p1primo:
-      ID: -1
-      pos: {x: 1, y: -10, z: -0}
-      weight: 0
-    p2primo:
-      ID: -1
-      pos: {x: 2, y: -1.0000001, z: -0}
-      weight: 0
-  - show: 0
-    p1:
-      ID: -1
-      pos: {x: -1, y: 10, z: 0}
-      weight: 1
-    p2:
-      ID: -1
-      pos: {x: -1, y: 0, z: 0}
-      weight: 0
-    p1primo:
-      ID: -1
-      pos: {x: 1, y: -10, z: -0}
-      weight: 0
-    p2primo:
-      ID: -1
-      pos: {x: 1, y: -0, z: -0}
-      weight: 0
-  - show: 0
-    p1:
-      ID: -1
-      pos: {x: -2, y: 1.0000001, z: 0}
-      weight: 0
-    p2:
-      ID: -1
-      pos: {x: -10, y: -4.3333335, z: 0}
-      weight: 1
-    p1primo:
-      ID: -1
-      pos: {x: 2, y: -1.0000001, z: -0}
-      weight: 0
-    p2primo:
-      ID: -1
-      pos: {x: 10, y: 4.3333335, z: -0}
-      weight: 0
-  - show: 0
-    p1:
-      ID: -1
-      pos: {x: -2, y: 1.0000001, z: 0}
-      weight: 0
-    p2:
-      ID: -1
-      pos: {x: 10, y: 9, z: 0}
-      weight: 1
-    p1primo:
-      ID: -1
-      pos: {x: 2, y: -1.0000001, z: -0}
-      weight: 0
-    p2primo:
-      ID: -1
-      pos: {x: -10, y: -9, z: -0}
-      weight: 0
-  - show: 0
-    p1:
-      ID: -1
-      pos: {x: -2, y: 1.0000001, z: 0}
-      weight: 0
-    p2:
-      ID: -1
-      pos: {x: -1, y: 0, z: 0}
-      weight: 0
-    p1primo:
-      ID: -1
-      pos: {x: 2, y: -1.0000001, z: -0}
-      weight: 0
-    p2primo:
-      ID: -1
-      pos: {x: 1, y: -0, z: -0}
-      weight: 0
-  - show: 0
-    p1:
-      ID: -1
-      pos: {x: -2, y: 1.0000001, z: 0}
+      pos: {x: 0.125, y: 4.5, z: 0}
       weight: 0
     p2:
       ID: -1
@@ -1464,7 +1696,7 @@ MonoBehaviour:
       weight: 1
     p1primo:
       ID: -1
-      pos: {x: 2, y: -1.0000001, z: -0}
+      pos: {x: -0.125, y: -4.5, z: -0}
       weight: 0
     p2primo:
       ID: -1
@@ -1473,7 +1705,7 @@ MonoBehaviour:
   - show: 0
     p1:
       ID: -1
-      pos: {x: -2, y: 1.0000001, z: 0}
+      pos: {x: 0.125, y: 4.5, z: 0}
       weight: 0
     p2:
       ID: -1
@@ -1481,7 +1713,7 @@ MonoBehaviour:
       weight: 1
     p1primo:
       ID: -1
-      pos: {x: 2, y: -1.0000001, z: -0}
+      pos: {x: -0.125, y: -4.5, z: -0}
       weight: 0
     p2primo:
       ID: -1
@@ -1490,7 +1722,7 @@ MonoBehaviour:
   - show: 0
     p1:
       ID: -1
-      pos: {x: -2, y: 1.0000001, z: 0}
+      pos: {x: 0.125, y: 4.5, z: 0}
       weight: 0
     p2:
       ID: -1
@@ -1498,7 +1730,7 @@ MonoBehaviour:
       weight: 1
     p1primo:
       ID: -1
-      pos: {x: 2, y: -1.0000001, z: -0}
+      pos: {x: -0.125, y: -4.5, z: -0}
       weight: 0
     p2primo:
       ID: -1
@@ -1507,7 +1739,7 @@ MonoBehaviour:
   - show: 0
     p1:
       ID: -1
-      pos: {x: -2, y: 1.0000001, z: 0}
+      pos: {x: 0.125, y: 4.5, z: 0}
       weight: 0
     p2:
       ID: -1
@@ -1515,7 +1747,7 @@ MonoBehaviour:
       weight: 1
     p1primo:
       ID: -1
-      pos: {x: 2, y: -1.0000001, z: -0}
+      pos: {x: -0.125, y: -4.5, z: -0}
       weight: 0
     p2primo:
       ID: -1
@@ -1524,24 +1756,7 @@ MonoBehaviour:
   - show: 0
     p1:
       ID: -1
-      pos: {x: -2, y: 1.0000001, z: 0}
-      weight: 0
-    p2:
-      ID: -1
-      pos: {x: -10, y: 0, z: 0}
-      weight: 1
-    p1primo:
-      ID: -1
-      pos: {x: 2, y: -1.0000001, z: -0}
-      weight: 0
-    p2primo:
-      ID: -1
-      pos: {x: 10, y: -0, z: -0}
-      weight: 0
-  - show: 0
-    p1:
-      ID: -1
-      pos: {x: -2, y: 1.0000001, z: 0}
+      pos: {x: 0.125, y: 4.5, z: 0}
       weight: 0
     p2:
       ID: -1
@@ -1549,7 +1764,7 @@ MonoBehaviour:
       weight: 1
     p1primo:
       ID: -1
-      pos: {x: 2, y: -1.0000001, z: -0}
+      pos: {x: -0.125, y: -4.5, z: -0}
       weight: 0
     p2primo:
       ID: -1
@@ -1558,7 +1773,92 @@ MonoBehaviour:
   - show: 0
     p1:
       ID: -1
-      pos: {x: -10, y: -4.3333335, z: 0}
+      pos: {x: -10, y: 4.5, z: 0}
+      weight: 1
+    p2:
+      ID: -1
+      pos: {x: -4.75, y: 3.5000002, z: 0}
+      weight: 0
+    p1primo:
+      ID: -1
+      pos: {x: 10, y: -4.5, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: 4.75, y: -3.5000002, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: -10, y: 4.5, z: 0}
+      weight: 1
+    p2:
+      ID: -1
+      pos: {x: -4.7, y: 3.7, z: 0}
+      weight: 0
+    p1primo:
+      ID: -1
+      pos: {x: 10, y: -4.5, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: 4.7, y: -3.7, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: -10, y: 4.5, z: 0}
+      weight: 1
+    p2:
+      ID: -1
+      pos: {x: -5.625, y: -0, z: 0}
+      weight: 0
+    p1primo:
+      ID: -1
+      pos: {x: 10, y: -4.5, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: 5.625, y: 0, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: -10, y: 4.5, z: 0}
+      weight: 1
+    p2:
+      ID: -1
+      pos: {x: -4.6, y: 3.6000001, z: 0}
+      weight: 0
+    p1primo:
+      ID: -1
+      pos: {x: 10, y: -4.5, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: 4.6, y: -3.6000001, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: -10, y: 4.5, z: 0}
+      weight: 1
+    p2:
+      ID: -1
+      pos: {x: 0.8000001, y: 7.2000003, z: 0}
+      weight: 0
+    p1primo:
+      ID: -1
+      pos: {x: 10, y: -4.5, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: -0.8000001, y: -7.2000003, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: -10, y: 4.5, z: 0}
       weight: 1
     p2:
       ID: -1
@@ -1566,7 +1866,7 @@ MonoBehaviour:
       weight: 0
     p1primo:
       ID: -1
-      pos: {x: 10, y: 4.3333335, z: -0}
+      pos: {x: 10, y: -4.5, z: -0}
       weight: 0
     p2primo:
       ID: -1
@@ -1575,7 +1875,92 @@ MonoBehaviour:
   - show: 0
     p1:
       ID: -1
-      pos: {x: 10, y: 9, z: 0}
+      pos: {x: 10, y: 4.5, z: 0}
+      weight: 1
+    p2:
+      ID: -1
+      pos: {x: -4.75, y: 3.5000002, z: 0}
+      weight: 0
+    p1primo:
+      ID: -1
+      pos: {x: -10, y: -4.5, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: 4.75, y: -3.5000002, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: 10, y: 4.5, z: 0}
+      weight: 1
+    p2:
+      ID: -1
+      pos: {x: -4.7, y: 3.7, z: 0}
+      weight: 0
+    p1primo:
+      ID: -1
+      pos: {x: -10, y: -4.5, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: 4.7, y: -3.7, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: 10, y: 4.5, z: 0}
+      weight: 1
+    p2:
+      ID: -1
+      pos: {x: -5.625, y: -0, z: 0}
+      weight: 0
+    p1primo:
+      ID: -1
+      pos: {x: -10, y: -4.5, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: 5.625, y: 0, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: 10, y: 4.5, z: 0}
+      weight: 1
+    p2:
+      ID: -1
+      pos: {x: -4.6, y: 3.6000001, z: 0}
+      weight: 0
+    p1primo:
+      ID: -1
+      pos: {x: -10, y: -4.5, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: 4.6, y: -3.6000001, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: 10, y: 4.5, z: 0}
+      weight: 1
+    p2:
+      ID: -1
+      pos: {x: 0.8000001, y: 7.2000003, z: 0}
+      weight: 0
+    p1primo:
+      ID: -1
+      pos: {x: -10, y: -4.5, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: -0.8000001, y: -7.2000003, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: 10, y: 4.5, z: 0}
       weight: 1
     p2:
       ID: -1
@@ -1583,7 +1968,1095 @@ MonoBehaviour:
       weight: 0
     p1primo:
       ID: -1
-      pos: {x: -10, y: -9, z: -0}
+      pos: {x: -10, y: -4.5, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: 1, y: -0, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: -4.75, y: 3.5000002, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: -4.7, y: 3.7, z: 0}
+      weight: 0
+    p1primo:
+      ID: -1
+      pos: {x: 4.75, y: -3.5000002, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: 4.7, y: -3.7, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: -4.75, y: 3.5000002, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: -5.625, y: -0, z: 0}
+      weight: 0
+    p1primo:
+      ID: -1
+      pos: {x: 4.75, y: -3.5000002, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: 5.625, y: 0, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: -4.75, y: 3.5000002, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: -8.125, y: -10, z: 0}
+      weight: 1
+    p1primo:
+      ID: -1
+      pos: {x: 4.75, y: -3.5000002, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: 8.125, y: 10, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: -4.75, y: 3.5000002, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: -3.125, y: 10, z: 0}
+      weight: 1
+    p1primo:
+      ID: -1
+      pos: {x: 4.75, y: -3.5000002, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: 3.125, y: -10, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: -4.75, y: 3.5000002, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: -4.6, y: 3.6000001, z: 0}
+      weight: 0
+    p1primo:
+      ID: -1
+      pos: {x: 4.75, y: -3.5000002, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: 4.6, y: -3.6000001, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: -4.75, y: 3.5000002, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: 0.8000001, y: 7.2000003, z: 0}
+      weight: 0
+    p1primo:
+      ID: -1
+      pos: {x: 4.75, y: -3.5000002, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: -0.8000001, y: -7.2000003, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: -4.75, y: 3.5000002, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: -10, y: -0, z: 0}
+      weight: 0
+    p1primo:
+      ID: -1
+      pos: {x: 4.75, y: -3.5000002, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: 10, y: 0, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: -4.75, y: 3.5000002, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: 4.9999995, y: 10, z: 0}
+      weight: 1
+    p1primo:
+      ID: -1
+      pos: {x: 4.75, y: -3.5000002, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: -4.9999995, y: -10, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: -4.75, y: 3.5000002, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: -1, y: 0, z: 0}
+      weight: 0
+    p1primo:
+      ID: -1
+      pos: {x: 4.75, y: -3.5000002, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: 1, y: -0, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: -4.75, y: 3.5000002, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: 9, y: -10, z: 0}
+      weight: 1
+    p1primo:
+      ID: -1
+      pos: {x: 4.75, y: -3.5000002, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: -9, y: 10, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: -4.75, y: 3.5000002, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: -10, y: 9, z: 0}
+      weight: 1
+    p1primo:
+      ID: -1
+      pos: {x: 4.75, y: -3.5000002, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: 10, y: -9, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: -4.75, y: 3.5000002, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: -3.5, y: -10, z: 0}
+      weight: 1
+    p1primo:
+      ID: -1
+      pos: {x: 4.75, y: -3.5000002, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: 3.5, y: 10, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: -4.75, y: 3.5000002, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: 1.5, y: 10, z: 0}
+      weight: 1
+    p1primo:
+      ID: -1
+      pos: {x: 4.75, y: -3.5000002, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: -1.5, y: -10, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: -4.75, y: 3.5000002, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: 10, y: 0, z: 0}
+      weight: 1
+    p1primo:
+      ID: -1
+      pos: {x: 4.75, y: -3.5000002, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: -10, y: -0, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: -4.7, y: 3.7, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: -5.625, y: -0, z: 0}
+      weight: 0
+    p1primo:
+      ID: -1
+      pos: {x: 4.7, y: -3.7, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: 5.625, y: 0, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: -4.7, y: 3.7, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: -8.125, y: -10, z: 0}
+      weight: 1
+    p1primo:
+      ID: -1
+      pos: {x: 4.7, y: -3.7, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: 8.125, y: 10, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: -4.7, y: 3.7, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: -3.125, y: 10, z: 0}
+      weight: 1
+    p1primo:
+      ID: -1
+      pos: {x: 4.7, y: -3.7, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: 3.125, y: -10, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: -4.7, y: 3.7, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: -4.6, y: 3.6000001, z: 0}
+      weight: 0
+    p1primo:
+      ID: -1
+      pos: {x: 4.7, y: -3.7, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: 4.6, y: -3.6000001, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: -4.7, y: 3.7, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: 0.8000001, y: 7.2000003, z: 0}
+      weight: 0
+    p1primo:
+      ID: -1
+      pos: {x: 4.7, y: -3.7, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: -0.8000001, y: -7.2000003, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: -4.7, y: 3.7, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: -10, y: -0, z: 0}
+      weight: 0
+    p1primo:
+      ID: -1
+      pos: {x: 4.7, y: -3.7, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: 10, y: 0, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: -4.7, y: 3.7, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: 4.9999995, y: 10, z: 0}
+      weight: 1
+    p1primo:
+      ID: -1
+      pos: {x: 4.7, y: -3.7, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: -4.9999995, y: -10, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: -4.7, y: 3.7, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: -1, y: 0, z: 0}
+      weight: 0
+    p1primo:
+      ID: -1
+      pos: {x: 4.7, y: -3.7, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: 1, y: -0, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: -4.7, y: 3.7, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: 9, y: -10, z: 0}
+      weight: 1
+    p1primo:
+      ID: -1
+      pos: {x: 4.7, y: -3.7, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: -9, y: 10, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: -4.7, y: 3.7, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: -10, y: 9, z: 0}
+      weight: 1
+    p1primo:
+      ID: -1
+      pos: {x: 4.7, y: -3.7, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: 10, y: -9, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: -4.7, y: 3.7, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: -3.5, y: -10, z: 0}
+      weight: 1
+    p1primo:
+      ID: -1
+      pos: {x: 4.7, y: -3.7, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: 3.5, y: 10, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: -4.7, y: 3.7, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: 1.5, y: 10, z: 0}
+      weight: 1
+    p1primo:
+      ID: -1
+      pos: {x: 4.7, y: -3.7, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: -1.5, y: -10, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: -4.7, y: 3.7, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: 10, y: 0, z: 0}
+      weight: 1
+    p1primo:
+      ID: -1
+      pos: {x: 4.7, y: -3.7, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: -10, y: -0, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: -5.625, y: -0, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: -8.125, y: -10, z: 0}
+      weight: 1
+    p1primo:
+      ID: -1
+      pos: {x: 5.625, y: 0, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: 8.125, y: 10, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: -5.625, y: -0, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: -3.125, y: 10, z: 0}
+      weight: 1
+    p1primo:
+      ID: -1
+      pos: {x: 5.625, y: 0, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: 3.125, y: -10, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: -5.625, y: -0, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: -4.6, y: 3.6000001, z: 0}
+      weight: 0
+    p1primo:
+      ID: -1
+      pos: {x: 5.625, y: 0, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: 4.6, y: -3.6000001, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: -5.625, y: -0, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: 0.8000001, y: 7.2000003, z: 0}
+      weight: 0
+    p1primo:
+      ID: -1
+      pos: {x: 5.625, y: 0, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: -0.8000001, y: -7.2000003, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: -5.625, y: -0, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: -10, y: -0, z: 0}
+      weight: 0
+    p1primo:
+      ID: -1
+      pos: {x: 5.625, y: 0, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: 10, y: 0, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: -5.625, y: -0, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: 4.9999995, y: 10, z: 0}
+      weight: 1
+    p1primo:
+      ID: -1
+      pos: {x: 5.625, y: 0, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: -4.9999995, y: -10, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: -5.625, y: -0, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: -1, y: 0, z: 0}
+      weight: 0
+    p1primo:
+      ID: -1
+      pos: {x: 5.625, y: 0, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: 1, y: -0, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: -5.625, y: -0, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: 9, y: -10, z: 0}
+      weight: 1
+    p1primo:
+      ID: -1
+      pos: {x: 5.625, y: 0, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: -9, y: 10, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: -5.625, y: -0, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: -10, y: 9, z: 0}
+      weight: 1
+    p1primo:
+      ID: -1
+      pos: {x: 5.625, y: 0, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: 10, y: -9, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: -5.625, y: -0, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: -3.5, y: -10, z: 0}
+      weight: 1
+    p1primo:
+      ID: -1
+      pos: {x: 5.625, y: 0, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: 3.5, y: 10, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: -5.625, y: -0, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: 1.5, y: 10, z: 0}
+      weight: 1
+    p1primo:
+      ID: -1
+      pos: {x: 5.625, y: 0, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: -1.5, y: -10, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: -5.625, y: -0, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: 10, y: 0, z: 0}
+      weight: 1
+    p1primo:
+      ID: -1
+      pos: {x: 5.625, y: 0, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: -10, y: -0, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: -8.125, y: -10, z: 0}
+      weight: 1
+    p2:
+      ID: -1
+      pos: {x: -4.6, y: 3.6000001, z: 0}
+      weight: 0
+    p1primo:
+      ID: -1
+      pos: {x: 8.125, y: 10, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: 4.6, y: -3.6000001, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: -8.125, y: -10, z: 0}
+      weight: 1
+    p2:
+      ID: -1
+      pos: {x: 0.8000001, y: 7.2000003, z: 0}
+      weight: 0
+    p1primo:
+      ID: -1
+      pos: {x: 8.125, y: 10, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: -0.8000001, y: -7.2000003, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: -8.125, y: -10, z: 0}
+      weight: 1
+    p2:
+      ID: -1
+      pos: {x: -1, y: 0, z: 0}
+      weight: 0
+    p1primo:
+      ID: -1
+      pos: {x: 8.125, y: 10, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: 1, y: -0, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: -3.125, y: 10, z: 0}
+      weight: 1
+    p2:
+      ID: -1
+      pos: {x: -4.6, y: 3.6000001, z: 0}
+      weight: 0
+    p1primo:
+      ID: -1
+      pos: {x: 3.125, y: -10, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: 4.6, y: -3.6000001, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: -3.125, y: 10, z: 0}
+      weight: 1
+    p2:
+      ID: -1
+      pos: {x: 0.8000001, y: 7.2000003, z: 0}
+      weight: 0
+    p1primo:
+      ID: -1
+      pos: {x: 3.125, y: -10, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: -0.8000001, y: -7.2000003, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: -3.125, y: 10, z: 0}
+      weight: 1
+    p2:
+      ID: -1
+      pos: {x: -1, y: 0, z: 0}
+      weight: 0
+    p1primo:
+      ID: -1
+      pos: {x: 3.125, y: -10, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: 1, y: -0, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: -4.6, y: 3.6000001, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: 0.8000001, y: 7.2000003, z: 0}
+      weight: 0
+    p1primo:
+      ID: -1
+      pos: {x: 4.6, y: -3.6000001, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: -0.8000001, y: -7.2000003, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: -4.6, y: 3.6000001, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: -10, y: -0, z: 0}
+      weight: 0
+    p1primo:
+      ID: -1
+      pos: {x: 4.6, y: -3.6000001, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: 10, y: 0, z: -0}
+      weight: 0
+  - show: 1
+    p1:
+      ID: -1
+      pos: {x: -4.6, y: 3.6000001, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: 4.9999995, y: 10, z: 0}
+      weight: 1
+    p1primo:
+      ID: -1
+      pos: {x: 4.6, y: -3.6000001, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: -4.9999995, y: -10, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: -4.6, y: 3.6000001, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: -1, y: 0, z: 0}
+      weight: 0
+    p1primo:
+      ID: -1
+      pos: {x: 4.6, y: -3.6000001, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: 1, y: -0, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: -4.6, y: 3.6000001, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: 9, y: -10, z: 0}
+      weight: 1
+    p1primo:
+      ID: -1
+      pos: {x: 4.6, y: -3.6000001, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: -9, y: 10, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: -4.6, y: 3.6000001, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: -10, y: 9, z: 0}
+      weight: 1
+    p1primo:
+      ID: -1
+      pos: {x: 4.6, y: -3.6000001, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: 10, y: -9, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: -4.6, y: 3.6000001, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: -3.5, y: -10, z: 0}
+      weight: 1
+    p1primo:
+      ID: -1
+      pos: {x: 4.6, y: -3.6000001, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: 3.5, y: 10, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: -4.6, y: 3.6000001, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: 1.5, y: 10, z: 0}
+      weight: 1
+    p1primo:
+      ID: -1
+      pos: {x: 4.6, y: -3.6000001, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: -1.5, y: -10, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: -4.6, y: 3.6000001, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: 10, y: 0, z: 0}
+      weight: 1
+    p1primo:
+      ID: -1
+      pos: {x: 4.6, y: -3.6000001, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: -10, y: -0, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: 0.8000001, y: 7.2000003, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: -10, y: -0, z: 0}
+      weight: 0
+    p1primo:
+      ID: -1
+      pos: {x: -0.8000001, y: -7.2000003, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: 10, y: 0, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: 0.8000001, y: 7.2000003, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: 4.9999995, y: 10, z: 0}
+      weight: 1
+    p1primo:
+      ID: -1
+      pos: {x: -0.8000001, y: -7.2000003, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: -4.9999995, y: -10, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: 0.8000001, y: 7.2000003, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: -1, y: 0, z: 0}
+      weight: 0
+    p1primo:
+      ID: -1
+      pos: {x: -0.8000001, y: -7.2000003, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: 1, y: -0, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: 0.8000001, y: 7.2000003, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: 9, y: -10, z: 0}
+      weight: 1
+    p1primo:
+      ID: -1
+      pos: {x: -0.8000001, y: -7.2000003, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: -9, y: 10, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: 0.8000001, y: 7.2000003, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: -10, y: 9, z: 0}
+      weight: 1
+    p1primo:
+      ID: -1
+      pos: {x: -0.8000001, y: -7.2000003, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: 10, y: -9, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: 0.8000001, y: 7.2000003, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: -3.5, y: -10, z: 0}
+      weight: 1
+    p1primo:
+      ID: -1
+      pos: {x: -0.8000001, y: -7.2000003, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: 3.5, y: 10, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: 0.8000001, y: 7.2000003, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: 1.5, y: 10, z: 0}
+      weight: 1
+    p1primo:
+      ID: -1
+      pos: {x: -0.8000001, y: -7.2000003, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: -1.5, y: -10, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: 0.8000001, y: 7.2000003, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: 10, y: 0, z: 0}
+      weight: 1
+    p1primo:
+      ID: -1
+      pos: {x: -0.8000001, y: -7.2000003, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: -10, y: -0, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: -10, y: -0, z: 0}
+      weight: 0
+    p2:
+      ID: -1
+      pos: {x: -1, y: 0, z: 0}
+      weight: 0
+    p1primo:
+      ID: -1
+      pos: {x: 10, y: 0, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: 1, y: -0, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: 4.9999995, y: 10, z: 0}
+      weight: 1
+    p2:
+      ID: -1
+      pos: {x: -1, y: 0, z: 0}
+      weight: 0
+    p1primo:
+      ID: -1
+      pos: {x: -4.9999995, y: -10, z: -0}
       weight: 0
     p2primo:
       ID: -1
@@ -1605,23 +3078,6 @@ MonoBehaviour:
     p2primo:
       ID: -1
       pos: {x: -9, y: 10, z: -0}
-      weight: 0
-  - show: 0
-    p1:
-      ID: -1
-      pos: {x: -1, y: 0, z: 0}
-      weight: 0
-    p2:
-      ID: -1
-      pos: {x: -10, y: 9, z: 0}
-      weight: 1
-    p1primo:
-      ID: -1
-      pos: {x: 1, y: -0, z: -0}
-      weight: 0
-    p2primo:
-      ID: -1
-      pos: {x: 10, y: -9, z: -0}
       weight: 0
   - show: 1
     p1:
@@ -1630,6 +3086,23 @@ MonoBehaviour:
       weight: 0
     p2:
       ID: -1
+      pos: {x: -10, y: 9, z: 0}
+      weight: 1
+    p1primo:
+      ID: -1
+      pos: {x: 1, y: -0, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: 10, y: -9, z: -0}
+      weight: 0
+  - show: 0
+    p1:
+      ID: -1
+      pos: {x: -1, y: 0, z: 0}
+      weight: 0
+    p2:
+      ID: -1
       pos: {x: -3.5, y: -10, z: 0}
       weight: 1
     p1primo:
@@ -1658,23 +3131,6 @@ MonoBehaviour:
       pos: {x: -1.5, y: -10, z: -0}
       weight: 0
   - show: 0
-    p1:
-      ID: -1
-      pos: {x: -1, y: 0, z: 0}
-      weight: 0
-    p2:
-      ID: -1
-      pos: {x: -10, y: 0, z: 0}
-      weight: 1
-    p1primo:
-      ID: -1
-      pos: {x: 1, y: -0, z: -0}
-      weight: 0
-    p2primo:
-      ID: -1
-      pos: {x: 10, y: -0, z: -0}
-      weight: 0
-  - show: 1
     p1:
       ID: -1
       pos: {x: -1, y: 0, z: 0}
@@ -1695,72 +3151,72 @@ MonoBehaviour:
   - show: 1
     p1:
       ID: -1
-      pos: {x: -3, y: 2, z: 0}
+      pos: {x: -5.5, y: 4.5, z: 0}
       weight: 0
     p2:
       ID: -1
-      pos: {x: -10, y: 2, z: 0}
+      pos: {x: -10, y: 4.5, z: 0}
       weight: 1
     p1primo:
       ID: -1
-      pos: {x: 3, y: -2, z: -0}
+      pos: {x: 5.5, y: -4.5, z: -0}
       weight: 0
     p2primo:
       ID: -1
-      pos: {x: 10, y: -2, z: -0}
+      pos: {x: 10, y: -4.5, z: -0}
       weight: 0
   - show: 1
     p1:
       ID: -1
-      pos: {x: -3, y: 2, z: 0}
+      pos: {x: -4.5, y: 4.5, z: 0}
       weight: 0
     p2:
       ID: -1
-      pos: {x: -1, y: 10, z: 0}
+      pos: {x: -3.125, y: 10, z: 0}
       weight: 1
     p1primo:
       ID: -1
-      pos: {x: 3, y: -2, z: -0}
+      pos: {x: 4.5, y: -4.5, z: -0}
       weight: 0
     p2primo:
       ID: -1
-      pos: {x: 1, y: -10, z: -0}
-      weight: 0
-  - show: 0
-    p1:
-      ID: -1
-      pos: {x: -0.50000024, y: 2, z: 0}
-      weight: 0
-    p2:
-      ID: -1
-      pos: {x: -3.5, y: 0.00000010728836, z: 0}
-      weight: 0
-    p1primo:
-      ID: -1
-      pos: {x: 0.50000024, y: -2, z: -0}
-      weight: 0
-    p2primo:
-      ID: -1
-      pos: {x: 3.5, y: -0.00000010728836, z: -0}
+      pos: {x: 3.125, y: -10, z: -0}
       weight: 0
   - show: 1
     p1:
       ID: -1
-      pos: {x: -3, y: 2, z: 0}
+      pos: {x: -4.6, y: 3.6000001, z: 0}
       weight: 0
     p2:
+      ID: -1
+      pos: {x: 4.9999995, y: 10, z: 0}
+      weight: 1
+    p1primo:
+      ID: -1
+      pos: {x: 4.6, y: -3.6000001, z: -0}
+      weight: 0
+    p2primo:
+      ID: -1
+      pos: {x: -4.9999995, y: -10, z: -0}
+      weight: 0
+  - show: 1
+    p1:
       ID: -1
       pos: {x: -1, y: 0, z: 0}
       weight: 0
-    p1primo:
+    p2:
       ID: -1
-      pos: {x: 3, y: -2, z: -0}
-      weight: 0
-    p2primo:
+      pos: {x: -10, y: 9, z: 0}
+      weight: 1
+    p1primo:
       ID: -1
       pos: {x: 1, y: -0, z: -0}
       weight: 0
-  - show: 1
+    p2primo:
+      ID: -1
+      pos: {x: 10, y: -9, z: -0}
+      weight: 0
+  - show: 0
     p1:
       ID: -1
       pos: {x: -1, y: 0, z: 0}
@@ -1777,7 +3233,7 @@ MonoBehaviour:
       ID: -1
       pos: {x: 3.5, y: 10, z: -0}
       weight: 0
-  - show: 1
+  - show: 0
     p1:
       ID: -1
       pos: {x: -1, y: 0, z: 0}
@@ -1798,7 +3254,7 @@ MonoBehaviour:
     LimitsColor: {r: 0.2425611, g: 1, b: 0, a: 1}
     Initial_Nodes: {r: 0.95149136, g: 1, b: 0, a: 0.99215686}
     Initial_Edges: {r: 0.032395888, g: 0.9619586, b: 0.9811321, a: 1}
-    Initial_Funciones: {r: 1, g: 0.6914679, b: 0, a: 0.015686275}
+    Initial_Funciones: {r: 1, g: 0.6914679, b: 0, a: 0.24705882}
     Initial_EdgesLimites: {r: 0.44577688, g: 0.041251317, b: 0.9716981, a: 0.3764706}
     PuntosDeCortes: {r: 0.9811321, g: 0.013883919, b: 0.013883919, a: 0.9843137}
     Cortes: {r: 0, g: 0.040804863, b: 1, a: 0.79607844}

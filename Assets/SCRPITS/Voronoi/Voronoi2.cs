@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.ExceptionServices;
 using UnityEditor;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 public class Voronoi2 : MonoBehaviour
 {
@@ -23,21 +24,27 @@ public class Voronoi2 : MonoBehaviour
     [Serializable]
     public class Point
     {
-        public int ID;
+        public string name;
         public Vector3 pos;
         public float weight;
 
-        public Point(Vector3 a, float b, int ID)
+        public Point(Vector3 a, float b, string name)
         {
             pos = a;
             weight = b;
-            this.ID = ID;
+            this.name = name;
+        }
+        public Point(Vector3 a, float b)
+        {
+            pos = a;
+            weight = b;
+            this.name = string.Empty;
         }
         public Point(Vector3 a)
         {
             pos = a;
             weight = 1;
-            this.ID = -1;
+            this.name = string.Empty;
         }
         public bool EnLimitesInclusivo(Rect limites)
         {
@@ -76,9 +83,6 @@ public class Voronoi2 : MonoBehaviour
         public Point p2;
 
 
-        public Point p1primo;
-        public Point p2primo;
-
         public static bool operator ==(Segmento lhs, Segmento rhs)
         {
 
@@ -106,8 +110,6 @@ public class Voronoi2 : MonoBehaviour
         {
             this.p1 = p1;
             this.p2 = p2;
-            this.p1primo = new Point(-p1.pos,0,-1);
-            this.p2primo = new Point(-p2.pos, 0, -1);
         }
 
         public static Vector3 ObtenerPuntoMedio(Point a, Point b)
@@ -131,9 +133,6 @@ public class Voronoi2 : MonoBehaviour
     [Serializable]
     public class FuncionLineal
     {
-
-        public Point Punto1Primo;
-        public Point Punto2Primo;
         /// <summary>
         /// Pendiente
         /// </summary>
@@ -280,6 +279,30 @@ public class Voronoi2 : MonoBehaviour
         }
     }
 
+    [Serializable]
+    public class site
+    {
+        public string name;
+        public Vector3 pos;
+        public float weight;
+    }
+
+    public class edge
+    {
+        Point p1;
+        Point p2;
+    }
+    public class vertex
+    {
+        List<edge> edges;
+    }
+
+
+    public class cells
+    {
+        Point p1;
+        List<edge> p2;
+    }
 
     public int NodesCuantity = 0;
 
@@ -336,7 +359,7 @@ public class Voronoi2 : MonoBehaviour
     {
         puntos = new List<Point>();
         for (int j = 0; j < NodesCuantity; j++)
-            puntos.Add(new Point(GetRandomVec2InLimits(), UnityEngine.Random.Range(0.1f, 1), j));
+            puntos.Add(new Point(GetRandomVec2InLimits(), UnityEngine.Random.Range(0.1f, 1), (j+65).ToString()));
     }
     private Vector2 GetRandomVec2InLimits()
     {
@@ -384,7 +407,7 @@ public class Voronoi2 : MonoBehaviour
             for (int j = i + 1; j < bizectrizesPerpendiculares.Count; j++)
             {
                 Vector2 pos = FuncionLineal.SeCortan(bizectrizesPerpendiculares[i], bizectrizesPerpendiculares[j]);
-                Point punto = new Point(pos, 0, -1);
+                Point punto = new Point(pos, 0);
                 if (punto.EnLimitesInclusivo(limits))
                     if (!interseccionesMediatrices.Any(x => x == punto))
                         interseccionesMediatrices.Add(punto);
@@ -501,6 +524,7 @@ public class Voronoi2 : MonoBehaviour
                                 Vector3.Distance(puntomedio, segmentosCortados[j].ObtenerPuntoMedio()))
                             {
                                 segmentomascercano = segmentosCortados[j];
+                                segmentomascercano.show = true;
                             }
                         }
                         else
@@ -538,7 +562,7 @@ public class Voronoi2 : MonoBehaviour
                 {
                     Gizmos.color = colores.Initial_Nodes;
                     Gizmos.DrawWireSphere(puntos[i].pos, puntos[i].weight);
-                    Handles.Label(puntos[i].pos, puntos[i].ID.ToString());
+                    Handles.Label(puntos[i].pos, puntos[i].name.ToString());
                 }
 
         Gizmos.color = colores.Initial_Edges;

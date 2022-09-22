@@ -308,12 +308,12 @@ public class Voronoid3 : MonoBehaviour
             if (float.IsInfinity(x))
                 return false;
             if (float.IsNaN(x))
-                return true;
+                return false;
             if (b.x - 0.001f < x && x < b.x + 0.001f)
             {
                 return true;
             }
-            return x == b.x;
+            return false;
         }
         /// <summary>
         /// Decir que se cortan, no toma en cuenta los puntos que conforman el segmento.
@@ -427,7 +427,9 @@ public class Voronoid3 : MonoBehaviour
                     continue;
                 for (int j = 0; j < cutPoints.Count; j++)
                 {
-                   if( Edge.SeCortan(cutedges[i], cutPoints[j]))
+                    if (cutedges[i] == null)
+                        continue;
+                    if ( Edge.SeCortan(cutedges[i], cutPoints[j]))
                    {
                         Edge edge1 = new Edge(cutedges[i]);
                         Edge edge2 = new Edge(cutedges[i]);
@@ -441,13 +443,20 @@ public class Voronoid3 : MonoBehaviour
                         {
                             if (sites[w] == cutedges[i].p1 || sites[w] == cutedges[i].p2)
                                 continue;
-                            if (Vector2.Distance(sites[w].pos, midPoint1) < Vector2.Distance(edge1.p1.pos, midPoint1))
+                            if (edge1 != null)
                             {
-                                edge1 = null;
+                                if (Vector2.Distance(sites[w].pos, midPoint1) < Vector2.Distance(edge1.p1.pos, midPoint1))
+                                {
+                                    edge1 = null;
+                                }
                             }
-                            if (Vector2.Distance(sites[w].pos, midPoint2) < Vector2.Distance(edge2.p1.pos, midPoint2))
+                            if (edge2 != null)
                             {
-                                edge2 = null;
+                                if (Vector2.Distance(sites[w].pos, midPoint2) < Vector2.Distance(edge2.p1.pos, midPoint2))
+                                {
+                                    edge2 = null;
+                                }
+
                             }
                         }
                         if (edge1 != null)
@@ -458,6 +467,10 @@ public class Voronoid3 : MonoBehaviour
                         complete = false;
                    }
                 }
+            }
+            if (cutedges.Count>1000)
+            {
+                continue;
             }
         }
         for (int i = 0; i < cutedges.Count; i++)
